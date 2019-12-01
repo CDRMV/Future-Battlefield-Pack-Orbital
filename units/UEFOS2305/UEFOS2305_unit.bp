@@ -199,8 +199,6 @@ UnitBlueprint {
             LAYER_Water = false,
         },
         Elevation = 60,
-        FuelRechargeRate = 6,
-        FuelUseTime = 150,
         MeshExtentsX = 2,
         MeshExtentsY = 2,
         MeshExtentsZ = 2,

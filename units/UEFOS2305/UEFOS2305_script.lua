@@ -7,36 +7,31 @@
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local TAirUnit = import('/lua/terranunits.lua').TAirUnit
+local TShieldStructureUnit = import('/lua/terranunits.lua').TShieldStructureUnit
 
-UEFOS2305 = Class(TAirUnit) {
+UEFOS2305 = Class(TShieldStructureUnit) {
     ShieldEffects = {
         '/effects/emitters/terran_shield_generator_mobile_01_emit.bp',
         '/effects/emitters/terran_shield_generator_mobile_02_emit.bp',
     },
     
     OnStopBeingBuilt = function(self,builder,layer)
-        TAirUnit.OnStopBeingBuilt(self,builder,layer)
+        TShieldStructureUnit.OnStopBeingBuilt(self,builder,layer)
 		self.ShieldEffectsBag = {}
     end,
     
+    OnStopBeingBuilt = function(self,builder,layer)
+        TShieldStructureUnit.OnStopBeingBuilt(self,builder,layer)
+        self.Rotator1 = CreateRotator(self, 'Spinner', 'y', nil, 10, 5, 10)
+        self.Trash:Add(self.Rotator1)
+		self.ShieldEffectsBag = {}
+    end,
+
     OnShieldEnabled = function(self)
-        TAirUnit.OnShieldEnabled(self)
-        KillThread( self.DestroyManipulatorsThread )
-        if not self.RotatorManipulator then
-            self.RotatorManipulator = CreateRotator( self, 'Spinner', 'y' )
-            self.Trash:Add( self.RotatorManipulator )
+        TShieldStructureUnit.OnShieldEnabled(self)
+        if self.Rotator1 then
+            self.Rotator1:SetTargetSpeed(10)
         end
-        self.RotatorManipulator:SetAccel( 5 )
-        self.RotatorManipulator:SetTargetSpeed( 30 )
-        if not self.AnimationManipulator then
-            local myBlueprint = self:GetBlueprint()
-            #LOG( 'it is ', repr(myBlueprint.Display.AnimationOpen) )
-            self.AnimationManipulator = CreateAnimator(self)
-            self.AnimationManipulator:PlayAnim( myBlueprint.Display.AnimationOpen )
-            self.Trash:Add( self.AnimationManipulator )
-        end
-        self.AnimationManipulator:SetRate(1)
         
         if self.ShieldEffectsBag then
             for k, v in self.ShieldEffectsBag do
@@ -50,9 +45,8 @@ UEFOS2305 = Class(TAirUnit) {
     end,
 
     OnShieldDisabled = function(self)
-        TAirUnit.OnShieldDisabled(self)
-        KillThread( self.DestroyManipulatorsThread )
-        self.DestroyManipulatorsThread = self:ForkThread( self.DestroyManipulators )
+        TShieldStructureUnit.OnShieldDisabled(self)
+        self.Rotator1:SetTargetSpeed(0)
         
         if self.ShieldEffectsBag then
             for k, v in self.ShieldEffectsBag do
@@ -61,23 +55,6 @@ UEFOS2305 = Class(TAirUnit) {
 		    self.ShieldEffectsBag = {}
 		end
     end,
-    
-    UpgradingState = State(TAirUnit.UpgradingState) {
-        Main = function(self)
-            self.Rotator1:SetTargetSpeed(0)
-            self.Rotator1:SetSpinDown(true)
-            TAirUnit.UpgradingState.Main(self)
-        end,
-        
-        
-        EnableShield = function(self)
-            TAirUnit.EnableShield(self)
-        end,
-        
-        DisableShield = function(self)
-            TAirUnit.DisableShield(self)
-        end,
-    }
 }
 
 TypeClass = UEFOS2305

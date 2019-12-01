@@ -64,10 +64,6 @@ UnitBlueprint {
     Categories = {
         'PRODUCTFA',
         'SELECTABLE',
-        'BUILTBYCOMMANDER',
-        'BUILTBYTIER1ENGINEER',
-        'BUILTBYTIER2ENGINEER',
-        'BUILTBYTIER3ENGINEER',
         'AIR',
         'UEF',
         'ORBITAL',
@@ -151,11 +147,15 @@ UnitBlueprint {
         InitialRallyX = 0,
         InitialRallyZ = 10,
         BuildableCategory = {
-	'uefos2302',
+			'uefos2302',
             'BUILTBYTIER1ORBITALFACTORY UEF MOBILE CONSTRUCTION ORBITAL',
             'BUILTBYTIER1ORBITALFACTORY UEF STRUCTURE ORBITAL',
             'BUILTBYTIER1ORBITALFACTORY UEF MOBILE ORBITAL',
         },
+    },
+	Footprint = {
+        SizeX = 0,
+        SizeZ = 0,
     },
     General = {
         BuildBones = {
