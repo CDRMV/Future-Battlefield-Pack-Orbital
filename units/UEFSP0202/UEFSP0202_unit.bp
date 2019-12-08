@@ -76,7 +76,6 @@ UnitBlueprint {
         'UEF',
         'MOBILE',
         'ORBITAL',
-        'STRUCTURE',
         'SHIELD',
         'SPACESHIP',
         'DIRECTFIRE',

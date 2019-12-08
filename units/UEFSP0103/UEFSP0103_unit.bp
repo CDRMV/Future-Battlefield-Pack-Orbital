@@ -79,7 +79,6 @@ UnitBlueprint {
         'MOBILE',
         'ORBITAL',
         'SHIELD',
-        'STRUCTURE',
         'SPACESHIP',
         'HIGHALTAIR',
         'TECH1',

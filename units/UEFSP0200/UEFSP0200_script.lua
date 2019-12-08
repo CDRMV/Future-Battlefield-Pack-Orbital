@@ -7,7 +7,6 @@
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local TAirUnit = import('/lua/terranunits.lua').TAirUnit
 local TConstructionUnit = import('/lua/terranunits.lua').TConstructionUnit
 
 UEFSP0200 = Class(TConstructionUnit) {
