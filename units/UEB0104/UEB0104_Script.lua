@@ -21,33 +21,27 @@ UEB0104 = Class(TStructureUnit) {
 
         Main = function(self)            
             local newSat = not self.Satellite
-            
-            # Play open animations.  Currently both play after unit finished, but will change
-            # to play one while being built and one when finished        
-            # Can't use PermOpenAnimation because of the satellite
             local bp = self:GetBlueprint()
             self.AnimManip = CreateAnimator(self)
             self.AnimManip:PlayAnim( '/units/XEB2402/XEB2402_aopen.sca' )
             self.Trash:Add(self.AnimManip)
             self:PlayUnitSound('MoveArms')
             WaitFor( self.AnimManip )
-            
+			
+			
             # Attach satellite to unit, play animation, release satellite
             # Create satellite and attach to attachpoint bone
-            local location = self:GetPosition('Attachpoint01')
+            local location = self:GetPosition('Attachpoint1')
             local army = self:GetArmy()
-            self.Trash:Add(CreateAttachedEmitter(self,'Tower_B04',army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(0.06, -0.10, 1.90))
-            self.Trash:Add(CreateAttachedEmitter(self,'Tower_B04',army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(-0.06, -0.10, 1.90))
-            self.Trash:Add(CreateAttachedEmitter(self,'Tower_B04',army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(0.08, -0.5, 1.60))
-            self.Trash:Add(CreateAttachedEmitter(self,'Tower_B04',army, '/effects/emitters/light_blue_blinking_01_emit.bp'):OffsetEmitter(-0.04, -0.5, 1.60))
-            self.Trash:Add(CreateAttachedEmitter(self,'Attachpoint01',army, '/effects/emitters/structure_steam_ambient_01_emit.bp'):OffsetEmitter(0.7, -0.85, 0.35))
-            self.Trash:Add(CreateAttachedEmitter(self,'Attachpoint01',army, '/effects/emitters/structure_steam_ambient_02_emit.bp'):OffsetEmitter(-0.7, -0.85, 0.35))
-            self.Trash:Add(CreateAttachedEmitter(self,'ConstuctBeam',army, '/effects/emitters/light_red_rotator_01_emit.bp'):ScaleEmitter( 2.00 ))
+            self.Trash:Add(CreateAttachedEmitter(self,'UEB0104',army, '/effects/emitters/structure_steam_ambient_01_emit.bp'):OffsetEmitter(0, 0, 0))
+            self.Trash:Add(CreateAttachedEmitter(self,'UEB0104',army, '/effects/emitters/structure_steam_ambient_02_emit.bp'):OffsetEmitter(0, 0, 0))
+            self.Trash:Add(CreateAttachedEmitter(self,'B_Effect1',army, '/effects/emitters/light_red_rotator_01_emit.bp'):ScaleEmitter( 2.00 ))
+			self.Trash:Add(CreateAttachedEmitter(self,'B_Effect2',army, '/effects/emitters/light_red_rotator_01_emit.bp'):ScaleEmitter( 2.00 ))
             
             if newSat then
                 self.Satellite = CreateUnitHPR('UEFSP0100', self:GetArmy(), location[1], location[2], location[3], 0, 0, 0)
                 self.Trash:Add(self.Satellite)
-                self.Satellite:AttachTo(self, 'Attachpoint01')
+                self.Satellite:AttachTo(self, 'Attachpoint1')
             end
             
             #Tell the satellite that we're its parent
@@ -57,13 +51,13 @@ UEB0104 = Class(TStructureUnit) {
             self.AnimManip:PlayAnim( '/units/XEB2402/XEB2402_aopen01.sca' )
             self:PlayUnitSound('LaunchSat')
             WaitFor( self.AnimManip )
-			self.Trash:Add(CreateAttachedEmitter(self,'XEB2402',army, '/effects/emitters/uef_orbital_death_laser_launch_01_emit.bp'):OffsetEmitter(0.00, 0.00, 1.00))
-			self.Trash:Add(CreateAttachedEmitter(self,'XEB2402',army, '/effects/emitters/uef_orbital_death_laser_launch_02_emit.bp'):OffsetEmitter(0.00, 2.00, 1.00))
-            
+			self.Trash:Add(CreateAttachedEmitter(self,'UEB0104',army, '/effects/emitters/uef_orbital_death_laser_launch_01_emit.bp'):OffsetEmitter(0.00, 0.00, 0.00))
+			self.Trash:Add(CreateAttachedEmitter(self,'UEB0104',army, '/effects/emitters/uef_orbital_death_laser_launch_02_emit.bp'):OffsetEmitter(0.00, 0.00, 0.00))
+			
             # Release unit
             if newSat then
                 self.Satellite:DetachFrom()
-                self.Satellite:Open()
+                self.Satellite:Open()      
             end
         end,
     },   
