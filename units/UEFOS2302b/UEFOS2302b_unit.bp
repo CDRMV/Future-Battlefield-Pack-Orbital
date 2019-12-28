@@ -1045,6 +1045,17 @@ UnitBlueprint {
             WeaponCategory = 'Anti Air',
             WeaponRepackTimeout = 0,
             WeaponUnpacks = false,
+        },    
+        {
+            AboveWaterTargetsOnly = true,
+            Damage = 3000,
+            DamageFriendly = true,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+            DisplayName = 'Air Crash',
+            DummyWeapon = true,
+            Label = 'DeathImpact',
+            WeaponCategory = 'Death',
         },
     },
     Wreckage = {

@@ -18,7 +18,7 @@ UEFOS1103 = Class(TAirUnit) {
     OnStopBeingBuilt = function(self,builder,layer)
         TAirUnit.OnStopBeingBuilt(self,builder,layer)
         self.Rotator1 = CreateRotator(self, 'Spinner01', 'y', nil, 10, 5, 10 )
-        self.Rotator2 = CreateRotator(self, 'Spinner02', 'z', nil, -10, -5, -10 )
+        self.Rotator2 = CreateRotator(self, 'Spinner02', 'y', nil, -10, -5, -10 )
         self.Trash:Add(self.Rotator1)
         self.Trash:Add(self.Rotator2)
 		self.ShieldEffectsBag = {}

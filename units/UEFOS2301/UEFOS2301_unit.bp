@@ -211,6 +211,19 @@ UnitBlueprint {
         Level3 = 18,
         Level4 = 24,
         Level5 = 30,
+    },    
+	Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Damage = 3000,
+            DamageFriendly = true,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+            DisplayName = 'Air Crash',
+            DummyWeapon = true,
+            Label = 'DeathImpact',
+            WeaponCategory = 'Death',
+        },
     },
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
