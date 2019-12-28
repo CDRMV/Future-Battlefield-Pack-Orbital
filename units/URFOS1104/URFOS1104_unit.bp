@@ -82,6 +82,7 @@ UnitBlueprint {
 		'BUILTBYTIER2ORBITALFACTORY',
 		'BUILTBYTIER3ORBITALFACTORY',
         'CYBRAN',
+		'AIR',
         'ORBITAL',
         'HIGHALTAIR',
         'DEFENSE',

@@ -84,6 +84,7 @@ AI = {
         'CYBRAN',
         'ORBITAL',
         'HIGHALTAIR',
+		'AIR',
         'DEFENSE',
         'MOBILE',
         'SATELLITE',

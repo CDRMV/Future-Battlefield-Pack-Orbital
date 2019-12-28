@@ -79,6 +79,7 @@ UnitBlueprint {
         'PRODUCTFA',
         'SELECTABLE',
         'UEF',
+		'AIR',
         'ORBITAL',
         'HIGHALTAIR',
         'MOBILE',

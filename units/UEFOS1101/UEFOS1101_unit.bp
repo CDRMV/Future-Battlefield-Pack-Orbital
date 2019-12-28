@@ -82,6 +82,7 @@ UnitBlueprint {
 		'BUILTBYTIER2ORBITALFACTORY',
 		'BUILTBYTIER3ORBITALFACTORY',
         'UEF',
+		'AIR',
         'ORBITAL',
         'HIGHALTAIR',
         'DEFENSE',
