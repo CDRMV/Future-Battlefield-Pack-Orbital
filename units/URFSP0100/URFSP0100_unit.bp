@@ -199,7 +199,7 @@ UnitBlueprint {
             RULEUCC_Transport = false,
         },
         ConstructionBar = true,
-        FactionName = 'UEF',
+        FactionName = 'Cybran',
         Icon = 'amph',
         SelectionPriority = 3,
         TechLevel = 'RULEUTL_Basic',
