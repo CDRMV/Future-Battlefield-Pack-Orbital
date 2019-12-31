@@ -98,6 +98,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_upgradable>Upgradeable',
         },
+		AnimationBuild = '/units/urb0102/urb0102_abuild.sca',
         BuildAttachBone = 'Attachpoint',
         Mesh = {
             IconFadeInZoom = 230,
@@ -117,7 +118,7 @@ UnitBlueprint {
         },
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = false,
-        UniformScale = 0.05,
+        UniformScale = 0.03,
     },
     Economy = {
         BuildCostEnergy = 7700,
@@ -134,10 +135,15 @@ UnitBlueprint {
         },
     },
     General = {
+		BuildAttachBone = 'Attachpoint',
         BuildBones = {
             BuildEffectBones = {
-                'URB0101',
-				'Attachpoint',
+                'B_Effect1',
+                'B_Effect2',
+				'B_Effect3',
+                'B_Effect4',
+				'B_Effect5',
+                'B_Effect6',
             },
         },
         Category = 'Factory',
