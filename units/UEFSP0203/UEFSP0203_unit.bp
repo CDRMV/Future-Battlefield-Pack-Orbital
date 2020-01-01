@@ -177,10 +177,8 @@ UnitBlueprint {
         TeleportMassMod = 0,
         TeleportTimeMod = 0.17,
         BuildableCategory = {
-            'uefsf100',
-            'uefsf101',
-            'uefsf200',
-            'uefsf201',
+            'BUILTBYTIER1ORBITALHANGARBAY UEF',
+            'BUILTBYTIER2ORBITALHANGARBAY UEF',
         },
     },
     General = {

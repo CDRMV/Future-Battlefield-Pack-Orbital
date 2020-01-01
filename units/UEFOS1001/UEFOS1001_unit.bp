@@ -71,6 +71,9 @@ UnitBlueprint {
         'SELECTABLE',
         'AIR',
         'UEF',
+		'BUILTBYTIER1ORBITALENGINEER',
+		'BUILTBYTIER2ORBITALENGINEER',
+		'BUILTBYTIER3ORBITALENGINEER',
         'ORBITAL',
         'STRUCTURE',
         'CARRIER',
@@ -149,8 +152,7 @@ UnitBlueprint {
         InitialRallyX = 0,
         InitialRallyZ = 10,
         BuildableCategory = {
-            'uefsf100',
-            'uefsf101',
+            'BUILTBYTIER1ORBITALHANGARBAY UEF',
         },
     },
     General = {
