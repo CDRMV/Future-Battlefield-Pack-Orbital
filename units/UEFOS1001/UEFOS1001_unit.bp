@@ -131,10 +131,10 @@ UnitBlueprint {
                     ShaderName = 'Unit',
                 },
                 {
-                    AlbedoName = 'uefos1000b_albedo.dds',
+                    AlbedoName = 'uefos1001_albedo.dds',
                     LODCutoff = 900,
                     ShaderName = 'Unit',
-                    SpecularName = 'uefos1000b_specteam.dds',
+                    SpecularName = 'uefos1001_specteam.dds',
                 },
             },
         },
