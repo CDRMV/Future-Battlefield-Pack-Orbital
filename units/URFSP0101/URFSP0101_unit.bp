@@ -250,7 +250,7 @@ UnitBlueprint {
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
-            Air = true,
+            Air = false,
             Land = true,
             Seabed = false,
             Sub = false,
