@@ -1,6 +1,6 @@
 name = "(F.B.P.) Future Battlefield Pack: Orbital"
 version = 1.0
-copyright = "Copyright © 2020, CDRMV (aka CDR Deadalus)"
+copyright = "Copyright Â© 2020, CDRMV (aka CDR Deadalus)"
 author = "CDRMV (aka CDR Deadalus)"
 description = "'Future Battlefield Pack: Orbital' is a new Unitpack for Forged Alliance, which adds a new Orbitaltechtree for all four Fractions into the Game."
 url = "http://www.moddb.com/mods/fbp-future-battlefield-pack"
