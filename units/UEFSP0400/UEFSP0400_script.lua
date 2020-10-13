@@ -8,10 +8,10 @@
 #****************************************************************************
 
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
-local WeaponFile = import('/lua/terranweapons.lua')
 local TSAMLauncher = import('/lua/terranweapons.lua').TSAMLauncher
-local TDFOrbitalLightLaserWeapon = WeaponFile.TDFOrbitalLightLaserWeapon
-local TDFOrbitalLightAntifighterLaserWeapon = WeaponFile.TDFOrbitalLightAntifighterLaserWeapon
+local FBPOWeaponFile = import('/mods/Future Battlefield Pack Orbital/lua/FBPOweapons.lua')
+local TDFOrbitalLightLaserWeapon = FBPOWeaponFile.TDFOrbitalLightLaserWeapon
+local TDFOrbitalLightAntifighterLaserWeapon = FBPOWeaponFile.TDFOrbitalLightAntifighterLaserWeapon
 
 UEFSP0400 = Class(TAirUnit) {
     Weapons = {
@@ -24,7 +24,7 @@ UEFSP0400 = Class(TAirUnit) {
     BeamExhaustCruise = '/effects/emitters/air_move_trail_beam_02_emit.bp',
     BeamExhaustIdle = '/effects/emitters/air_idle_trail_beam_01_emit.bp',
 
-    BuildAttachBone = 'UEFOSS100',
+    BuildAttachBone = 'UEFOSS101',
 
     OnStopBeingBuilt = function(self,builder,layer)
         TAirUnit.OnStopBeingBuilt(self,builder,layer)

@@ -8,9 +8,9 @@
 #****************************************************************************
 
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit 
-local WeaponFile = import('/lua/terranweapons.lua')
-local TDFOrbitalLaserWeapon = WeaponFile.TDFOrbitalLaserWeapon
-local TDFOrbitalLightLaserWeapon = WeaponFile.TDFOrbitalLightLaserWeapon
+local FBPOWeaponFile = import('/mods/Future Battlefield Pack Orbital/lua/FBPOweapons.lua')
+local TDFOrbitalLaserWeapon = FBPOWeaponFile.TDFOrbitalLaserWeapon
+local TDFOrbitalLightLaserWeapon = FBPOWeaponFile.TDFOrbitalLightLaserWeapon
 
 UEFOS1001 = Class(TAirUnit) {
     Weapons = {

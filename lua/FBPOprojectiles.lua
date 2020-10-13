@@ -1,4 +1,9 @@
 
+local Projectile = import('/lua/sim/projectile.lua').Projectile
+local DefaultProjectileFile = import('/lua/sim/defaultprojectiles.lua')
+local EmitterProjectile = DefaultProjectileFile.EmitterProjectile
+local SingleBeamProjectile = DefaultProjectileFile.SingleBeamProjectile
+local MultiPolyTrailProjectile = DefaultProjectileFile.MultiPolyTrailProjectile
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 
 TOrbitalLaser01 = Class(MultiPolyTrailProjectile) {

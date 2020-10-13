@@ -8,10 +8,10 @@
 #****************************************************************************
 
 local TAirUnit = import('/lua/terranunits.lua').TAirUnit
-local WeaponFile = import('/lua/terranweapons.lua')
-local TDFOrbitalLaserWeapon = WeaponFile.TDFOrbitalLaserWeapon
-local TDFOrbitalLightLaserWeapon = WeaponFile.TDFOrbitalLightLaserWeapon
-local TDFOrbitalLightAntifighterLaserWeapon = WeaponFile.TDFOrbitalLightAntifighterLaserWeapon
+local FBPOWeaponFile = import('/mods/Future Battlefield Pack Orbital/lua/FBPOweapons.lua')
+local TDFOrbitalLaserWeapon = FBPOWeaponFile.TDFOrbitalLaserWeapon
+local TDFOrbitalLightLaserWeapon = FBPOWeaponFile.TDFOrbitalLightLaserWeapon
+local TDFOrbitalLightAntifighterLaserWeapon = FBPOWeaponFile.TDFOrbitalLightAntifighterLaserWeapon
 local TSAMLauncher = import('/lua/terranweapons.lua').TSAMLauncher
 
 UEFSP0103 = Class(TAirUnit) {

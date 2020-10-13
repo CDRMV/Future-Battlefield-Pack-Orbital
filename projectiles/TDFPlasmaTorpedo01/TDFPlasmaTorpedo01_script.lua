@@ -1,7 +1,7 @@
 #
 # Terran Anti Air Missile
 #
-local TPlasmaTorpedoProjectile = import('/lua/terranprojectiles.lua').TPlasmaTorpedoProjectile
+local TPlasmaTorpedoProjectile = import('/mods/Future Battlefield Pack Orbital/lua/FBPOprojectiles.lua').TPlasmaTorpedoProjectile
 TDFPlasmaTorpedo01 = Class(TPlasmaTorpedoProjectile) {
 }
 

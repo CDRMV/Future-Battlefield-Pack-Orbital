@@ -8,6 +8,8 @@
 #**  Copyright © 2007 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-TDFOrbitalLightLaser01 = Class(import('/lua/terranprojectiles.lua').TOrbitalLightLaser01) {
-}
+local TOrbitalLightLaser01 = import('/mods/Future Battlefield Pack Orbital/lua/FBPOprojectiles.lua').TOrbitalLightLaser01
+
+TDFOrbitalLightLaser01 = Class(TOrbitalLightLaser01) {}
+
 TypeClass = TDFOrbitalLightLaser01
