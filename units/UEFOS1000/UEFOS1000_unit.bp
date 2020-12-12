@@ -87,7 +87,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SHOWQUEUE',
         'SORTCONSTRUCTION',
-		'CONSTRUCTIONSORTDOWN',
         'OVERLAYANTIAIR',
     },
     CollisionOffsetY = -0.25,
