@@ -57,11 +57,8 @@ UnitBlueprint {
         'PRODUCTFA',
         'AEON',
         'STRUCTURE',
-        'BUILTBYCOMMANDER',
-        'BUILTBYTIER1ENGINEER',
-        'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',
-        'TECH1',
+        'TECH3',
         'ORBITALSYSTEM',
         'SELECTABLE',
         'LAND',
@@ -74,18 +71,17 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Structure',
-        EconomyThreatLevel = 1623,
+        EconomyThreatLevel = 0,
         Health = 9000,
         MaxHealth = 9000,
         RegenRate = 0,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = 'Orbital Engineer Spaceport',
+    Description = 'Heavy Anti Orbital Cannon',
     Display = {
-	    Abilities = {
-            'Shots one Tech 1 Orbital Engineer into the Orbit',
-        },
+	    AnimationPermOpen = '/mods/Future Battlefield Pack Orbital/units/UABAOC300/UABAOC300_Aopen.sca',
+		AnimationRate = 0.5,
         DamageEffects = {
             {
                 Bone = 0,
@@ -110,14 +106,8 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 140,
+                    LODCutoff = 500,
                     ShaderName = 'Aeon',
-                },
-                {
-                    AlbedoName = 'uab0104_albedo.dds',
-                    LODCutoff = 300,
-                    ShaderName = 'Aeon',
-                    SpecularName = 'uab0104_specteam.dds',
                 },
             },
         },
@@ -128,7 +118,7 @@ UnitBlueprint {
                 Albedo = 'Tarmacs/Tar8x_aeon_01_albedo',
                 DeathLifetime = 300,
                 FadeOut = 150,
-                Length = 12.8,
+                Length = 16.8,
                 Normal = 'Tarmacs/Tar8x_aeon_01_normals',
                 Orientations = {
                     0,
@@ -137,22 +127,22 @@ UnitBlueprint {
                     270,
                 },
                 RemoveWhenDead = false,
-                Width = 12.8,
+                Width = 16.8,
             },
         },
-        UniformScale = 0.45,
+        UniformScale = 0.55,
     },
     Economy = {
         BuildCostEnergy = 2600,
         BuildCostMass = 290,
         BuildTime = 520,
         RebuildBonusIds = {
-            'uab0104',
+            'uabaoc300',
         },
     },
     Footprint = {
-        SizeX = 3,
-        SizeZ = 3,
+        SizeX = 5,
+        SizeZ = 5,
     },
     General = {
         Category = 'Defense',
@@ -175,7 +165,7 @@ UnitBlueprint {
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Secret',
-        UnitName = 'Orbitania',
+        UnitName = 'Orculus',
         UnitWeight = 1,
     },
     Intel = {
@@ -207,8 +197,8 @@ UnitBlueprint {
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
+        SkirtSizeX = 8,
+        SkirtSizeZ = 8,
         TurnRate = 0,
     },
     SelectionSizeX = 1.8,
@@ -217,7 +207,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 1,
     SizeZ = 2,
-    StrategicIconName = 'icon_factory1_air',
+    StrategicIconName = 'icon_structure3_antiair',
     StrategicIconSortPriority = 175,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

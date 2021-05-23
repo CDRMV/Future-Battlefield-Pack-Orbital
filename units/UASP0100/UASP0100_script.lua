@@ -8,7 +8,7 @@
 #****************************************************************************
 local AConstructionUnit = import('/lua/aeonunits.lua').AConstructionUnit
 
-UASSP0100 = Class(AConstructionUnit) {
+UASP0100 = Class(AConstructionUnit) {
 
     BeamExhaustCruise = '/effects/emitters/air_move_trail_beam_02_emit.bp',
     BeamExhaustIdle = '/effects/emitters/air_idle_trail_beam_01_emit.bp',
@@ -16,4 +16,4 @@ UASSP0100 = Class(AConstructionUnit) {
 }
 
 
-TypeClass = UASSP0100
+TypeClass = UASP0100
