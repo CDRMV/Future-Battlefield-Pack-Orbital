@@ -137,10 +137,10 @@ UnitBlueprint {
         MovementEffects = {
             BeamExhaust = {
                 Bones = {
-                    'Exhaust01',
-                    'Exhaust02',
-                    'Exhaust03',
-                    'Exhaust04',
+                    'L_Engine1',
+                    'L_Engine2',
+                    'R_Engine1',
+                    'R_Engine2',
                 },
                 Cruise = true,
                 Idle = false,

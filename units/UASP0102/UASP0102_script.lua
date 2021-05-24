@@ -15,8 +15,8 @@ local TDFOrbitalLightAntifighterLaserWeapon = FBPOWeaponFile.TDFOrbitalLightAnti
 
 UASP0102 = Class(AAirUnit) {
 
-    BeamExhaustCruise = '/effects/emitters/air_move_trail_beam_02_emit.bp',
-    BeamExhaustIdle = '/effects/emitters/air_idle_trail_beam_01_emit.bp',
+    BeamExhaustCruise = '/mods/Future Battlefield Pack Orbital/effects/emitters/Aeon_Spaceship_Engine_beam_emit.bp',
+    BeamExhaustIdle = '/mods/Future Battlefield Pack Orbital/effects/emitters/Aeon_Spaceship_Engine_trail_emit.bp',
 
     Weapons = {
         MainGun = Class(TDFOrbitalLaserWeapon) {},
