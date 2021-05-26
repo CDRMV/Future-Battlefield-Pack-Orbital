@@ -191,7 +191,7 @@ UnitBlueprint {
             RULEUTC_ShieldToggle = true,
         },
         FactionName = 'Aeon',
-        Icon = 'amph',
+        Icon = 'orbit',
         SelectionPriority = 3,
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Mercury Class',
