@@ -51,8 +51,8 @@ UnitBlueprint {
         AirThreatLevel = 0,
         ArmorType = 'Experimental',
         EconomyThreatLevel = 0,
-        Health = 600,
-        MaxHealth = 600,
+        Health = 35000,
+        MaxHealth = 35000,
         RegenRate = 0,
 		Shield = {
             ImpactEffects = 'UEFShieldHit01',
@@ -68,8 +68,8 @@ UnitBlueprint {
             ShieldSize = 40,
             ShieldVerticalOffset = 2,
         },
-        SubThreatLevel = 3,
-        SurfaceThreatLevel = 0,
+        SubThreatLevel = 81,
+        SurfaceThreatLevel = 300,
     },
     Description = 'Experimental Cityship',
     Display = {
@@ -118,10 +118,10 @@ UnitBlueprint {
         UniformScale = 0.8,
     },
     Economy = {
-        BuildCostEnergy = 2880,
-        BuildCostMass = 360,
-		BuildRate = 20,
-        BuildTime = 1440,
+        BuildCostEnergy = 350000,
+        BuildCostMass = 28000,
+        BuildRate = 240,
+        BuildTime = 12000,
 		BuildableCategory = {
             'BUILTBYTIER3FACTORY UEF MOBILE CONSTRUCTION',
             'BUILTBYTIER2FACTORY UEF MOBILE CONSTRUCTION',
