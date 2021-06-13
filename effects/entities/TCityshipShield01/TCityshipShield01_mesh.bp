@@ -1,0 +1,15 @@
+MeshBlueprint {
+    LODs = {
+        {
+            MeshName = '/mods/Future Battlefield Pack Orbital/effects/Entities/Sphere03/Sphere03_lod0.scm',
+            AlbedoName = '/mods/Future Battlefield Pack Orbital/effects/Entities/TCityshipShield01/TCityshipShield01_Albedo.dds',
+            SpecularName = '/mods/Future Battlefield Pack Orbital/effects/Entities/TCityshipShield01/TCityshipShield01_Specular.dds',
+            SecondaryName = '/mods/Future Battlefield Pack Orbital/effects/Entities/TCityshipShield01/TCityshipShield01_Secondary.dds',
+            ShaderName = 'ShieldUEF',
+            LODCutoff = 1000,
+        },
+    },
+    IconFadeInZoom = 4,
+    SortOrder = 1000,
+    StraddleWater = true,
+}
