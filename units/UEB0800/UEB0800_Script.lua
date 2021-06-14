@@ -7,9 +7,12 @@
 #****************************************************************************
 local TLandFactoryUnit = import('/lua/terranunits.lua').TLandFactoryUnit
 local TShieldStructureUnit = import('/lua/terranunits.lua').TShieldStructureUnit
+local TDFHeavyPlasmaGatlingWeapon = import('/lua/terranweapons.lua').TDFHeavyPlasmaGatlingWeapon
 
 UEB0800 = Class(TLandFactoryUnit) {
-
+    Weapons = {
+        GatlingCannon = Class(TDFHeavyPlasmaGatlingWeapon){},
+    },
 }
 
 
