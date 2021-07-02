@@ -1,0 +1,171 @@
+UnitBlueprint {
+    Audio = {
+        Construct = Sound {
+            Bank = 'UAB',
+            Cue = 'UAB0101_Construct_Start',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        ConstructLoop = Sound {
+            Bank = 'UAB',
+            Cue = 'UAB0101_Construct_Loop',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        DeathExplosion = Sound {
+            Bank = 'UALDestroy',
+            Cue = 'UAB_Destroy_Lrg_PreDestroy',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Destroyed = Sound {
+            Bank = 'UALDestroy',
+            Cue = 'UAB_Destroy_Huge',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        DoneBeingBuilt = Sound {
+            Bank = 'UAB',
+            Cue = 'UAB0101_Activate',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        UISelection = Sound {
+            Bank = 'Interface',
+            Cue = 'Aeon_Select_Factory',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+    },
+    BuildIconSortPriority = 10,
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER2ENGINEER',
+        'AEON',
+        'STRUCTURE',
+        'CONSTRUCTION',
+        'FACTORY',
+        'SHOWQUEUE',
+        'DRAGBUILD',
+        'SIZE4',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTDEFENSE',
+        'MODULATOWERFOUNDATION',
+    },
+    Defense = {
+        AirThreatLevel = 0,
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 3,
+        Health = 4400,
+        MaxHealth = 4400,
+        RegenRate = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Module Tower Foundation',
+    Display = {
+	    BuildAttachBone = 'Attachpoint',
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 500,
+                    Scrolling = true,
+                    ShaderName = 'Aeon',
+                },
+            },
+        },
+        PlaceholderMeshName = 'UXB0006',
+        SpawnRandomRotation = true,
+        UniformScale = 0.95,
+    },
+    Economy = {
+        BuildCostEnergy = 2100,
+        BuildCostMass = 240,
+        BuildRate = 1,
+        BuildTime = 50,
+        BuildableCategory = {
+            'BUILTBYMODULATOWERFOUNDATION AEON',
+        },
+    },
+    Footprint = {
+        SizeX = 5,
+        SizeZ = 5,
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {0},
+        },
+        Category = 'Defense',
+        Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Pause = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        FactionName = 'Aeon',
+        ToggleCaps = {
+            RULEUTC_SpecialToggle= true,
+        },
+        OrderOverrides = {
+            RULEUTC_SpecialToggle= {
+                bitmapId = 'Nuke',
+                helpText = 'removestorage',
+            },
+        },
+        Icon = 'land',
+        SelectionPriority = 5,
+        TechLevel = 'RULEUTL_Basic',
+        UnitWeight = 1,
+    },
+    Intel = {
+        VisionRadius = 20,
+    },
+    Interface = {
+        HelpText = '<LOC uab0101_help>Land Factory',
+    },
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 1.9,
+    LifeBarSize = 4.5,
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Air = false,
+            LAYER_Land = true,
+            LAYER_Orbit = false,
+            LAYER_Seabed = false,
+            LAYER_Sub = false,
+            LAYER_Water = false,
+        },
+        FlattenSkirt = false,
+
+        MeshExtentsX = 3.2,
+        MeshExtentsY = 2.2,
+        MeshExtentsZ = 3.2,
+
+        MotionType = 'RULEUMT_None',
+
+
+        SkirtSizeX = 0,
+        SkirtSizeZ = 0,
+
+    },
+    SelectionSizeX = 2.75,
+    SelectionSizeZ = 2.75,
+    SelectionThickness = 0.36,
+    SizeX = 3.6,
+    SizeY = 1,
+    SizeZ = 3.6,
+    StrategicIconName = 'icon_factory1_land',
+    StrategicIconSortPriority = 220,
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Air = false,
+            Land = true,
+            Seabed = false,
+            Sub = false,
+            Water = false,
+        },
+    },
+}

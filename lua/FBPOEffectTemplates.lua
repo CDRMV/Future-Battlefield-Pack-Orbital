@@ -2,6 +2,12 @@ ModBpPath = '/mods/Future Battlefield Pack Orbital/effects/emitters/'
 EmtBpPath = '/effects/emitters/'
 EmitterTempEmtBpPath = '/effects/emitters/temp/'
 
+AeonLaserFenceBeam = {
+    ModBpPath .. 'aeon_laserfence_beam_01_emit.bp',
+}
+
+
+
 AeonHyperspaceCharge01 = {
     ModBpPath .. 'aeon_hyperspacewindow_01_emit.bp',
     ModBpPath .. 'aeon_hyperspacewindow_02_emit.bp',

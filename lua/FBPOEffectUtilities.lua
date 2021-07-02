@@ -599,3 +599,25 @@ function DestroyRemainingHyperspaceChargingEffects(unit, EffectsBag)
         unit.HyperspaceCybranSphere:Destroy()
     end
 end
+
+function CreateLaserFenceEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
+	local army = reclaimer:GetArmy()
+    local pos = reclaimed:GetPosition()
+    pos[2] = GetSurfaceHeight(pos[1], pos[3])
+
+    local beamEnd = Entity()
+    EffectsBag:Add(beamEnd)
+    Warp( beamEnd, pos )
+
+    for kBone, vBone in BuildEffectBones do
+		for kEmit, vEmit in FBPOEffectTemplate.AeonLaserFenceBeam do
+			local beamEffect = AttachBeamEntityToEntity(reclaimer, vBone, reclaimed, vBone, army, vEmit )
+			EffectsBag:Add(beamEffect)
+		end
+	end
+end
+
+
+
+
+
