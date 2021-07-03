@@ -73,8 +73,41 @@ AModulaTowerUnit = Class(FactoryUnit) {
 }
 
 --------------------------------------------------------------------------------
--- Aeon Laser Fence
+-- Aeon Laser Fence 
+
+-- Note:
+-- I have added an function to recolour the Laser Beam Effect
+-- However it only works with FAF (Forged Alliance Forever)
+-- So I have integrate an Versioncheck to load the right Create Beam Functions 
 --------------------------------------------------------------------------------
+
+local version = tonumber( (string.gsub(string.gsub(GetVersion(), '1.5.', ''), '1.6.', '')) )
+
+if version < 3652 then
+
+ALaserFenceUnit = Class(ConstructionUnit) {
+    OnCreate = function(self,builder,layer)
+        ConstructionUnit.OnCreate(self,builder,layer)
+    end,
+	
+	OnStopBeingBuilt = function(self, builder, layer)
+        ConstructionUnit.OnStopBeingBuilt(self, builder, layer)
+		local bp = self:GetBlueprint()
+        local bpAnim = bp.Display.AnimationOpen
+ 
+			
+			if bpAnim then		
+				if not self.Dead then
+				    self.OpenAnim = CreateAnimator(self)
+					self.Trash:Add(self.OpenAnim )
+                    self.OpenAnim:PlayAnim(bpAnim)
+					ModEffectUtil.CreateLaserFenceEffectsSteam(self, builder, {'Effect1', 'Effect2', 'Effect3',}, self.ReclaimEffectsBag)
+                end
+			end
+    end,
+}
+
+else
 
 ALaserFenceUnit = Class(ConstructionUnit) {
     OnCreate = function(self,builder,layer)
@@ -97,3 +130,5 @@ ALaserFenceUnit = Class(ConstructionUnit) {
 			end
     end,
 }
+
+end

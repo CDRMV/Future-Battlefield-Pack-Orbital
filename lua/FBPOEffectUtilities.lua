@@ -1,6 +1,18 @@
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 local Entity = import('/lua/sim/Entity.lua').Entity
 local FBPOEffectTemplate = import('/mods/Future Battlefield Pack Orbital/lua/FBPOEffectTemplates.lua')
+local util = import('/lua/utilities.lua')
+
+
+--------------------------------------------------------------------------------
+
+-- Spaceship FAF Hyperspace Wormhole Effects
+
+--------------------------------------------------------------------------------
+-- Note:
+-- These Effects replace the Vanilla Teleportation Effects
+-- This Code is for FAF (Forged Alliance Forever)
+--------------------------------------------------------------------------------
 
 function PlayHyperspaceChargingEffects(unit, TeleportDestination, EffectsBag, teleDelay)
     -- Plays teleport effects for the given unit
@@ -600,7 +612,53 @@ function DestroyRemainingHyperspaceChargingEffects(unit, EffectsBag)
     end
 end
 
+--------------------------------------------------------------------------------
+
+-- Aeon Laserfence FAF Beam Effect
+
+--------------------------------------------------------------------------------
+-- Note:
+-- I have added an function to recolour the Laser Beam Effect
+-- However it only works with FAF (Forged Alliance Forever)
+-- The Function: RenameBeamEmitterToColoured(BeamName, ArmyColourIndex) is originally coming from the Nomads Mod
+--------------------------------------------------------------------------------
+
+function RenameBeamEmitterToColoured(BeamName, ArmyColourIndex)
+    if string.sub(BeamName,-3) == '.bp' then
+        return string.sub(BeamName,1,-4) .. math.floor(100*ArmyColourIndex)
+    end
+    return string.sub(BeamName,1,-6) .. math.floor(100*ArmyColourIndex)
+end
+
+
 function CreateLaserFenceEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
+	local army = reclaimer:GetArmy()
+    local pos = reclaimed:GetPosition()
+    pos[2] = GetSurfaceHeight(pos[1], pos[3])
+
+    local beamEnd = Entity()
+    EffectsBag:Add(beamEnd)
+    Warp( beamEnd, pos )
+
+    for kBone, vBone in BuildEffectBones do
+		for kEmit, vEmit in FBPOEffectTemplate.AeonLaserFenceBeam do
+			local beamBp = RenameBeamEmitterToColoured(vEmit, reclaimer.ColourIndex)
+			local beamEffect = AttachBeamEntityToEntity(reclaimer, vBone, reclaimed, vBone, army, beamBp )
+			EffectsBag:Add(beamEffect)
+		end
+	end
+end
+
+--------------------------------------------------------------------------------
+
+-- Aeon Laserfence Steam Beam Effect
+
+--------------------------------------------------------------------------------
+-- Note:
+-- Doesn't have the Recolour Function integrated
+--------------------------------------------------------------------------------
+
+function CreateLaserFenceEffectsSteam( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
 	local army = reclaimer:GetArmy()
     local pos = reclaimed:GetPosition()
     pos[2] = GetSurfaceHeight(pos[1], pos[3])
@@ -616,6 +674,7 @@ function CreateLaserFenceEffects( reclaimer, reclaimed, BuildEffectBones, Effect
 		end
 	end
 end
+
 
 
 
