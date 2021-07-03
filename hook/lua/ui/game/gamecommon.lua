@@ -4,6 +4,16 @@ if version < 3652 then -- All versions below 3652 don't have buildin global icon
 	LOG('Future Battlefield Pack Orbital: [gamecommon.lua '..debug.getinfo(1).currentline..'] - Gameversion is older then 3652. Hooking "GetUnitIconFileNames" to add our own unit icons')
 
 local MyUnitIdTable = {
+ -- Aeon Laserfence
+
+   uab0208=true, -- Aeon Tech 2 Laserfence
+   uab0208a=true, -- Aeon Tech 2 Laserfence Short Vertical
+   uab0208b=true, -- Aeon Tech 2 Laserfence Short Horizontal
+   uab0208c=true, -- Aeon Tech 2 Laserfence Long Vertical
+   uab0208d=true, -- Aeon Tech 2 Laserfence Long Horizontal
+
+ -- Aeon Spaceships and Orbitalengineers
+
    uasp0100=true, -- Aeon Tech 1 Orbital Engineer
    uasp0101=true, -- Aeon Tech 1 Corvette (Spaceship)
    uasp0102=true, -- Aeon Tech 1 Frigate (Spaceship)
