@@ -17,11 +17,10 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
-    BuildIconSortPriority = 140,
+    BuildIconSortPriority = 143,
     Categories = {
         'PRODUCTSC1',
         'SELECTABLE',
-		'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER2LASERWALL',
         'AEON',
         'STRUCTURE',
@@ -47,9 +46,9 @@ UnitBlueprint {
         SurfaceThreatLevel = 0,
         ThreatLevel = 0,
     },
-    Description = 'Laser Fence',
+    Description = 'Laser Fence (Short Horizontal)',
     Display = {
-		AnimationOpen = '/mods/Future Battlefield Pack Orbital/units/Colonisation/Aeon/UAB0208/UAB0208_Aopen.sca',
+		AnimationOpen = '/mods/Future Battlefield Pack Orbital/units/Colonisation/Aeon/Laserfences/UAB0208/UAB0208_Aopen.sca',
         DamageEffects = {
             {
                 Bone = 0,
@@ -68,6 +67,10 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
+				    MeshName = '/mods/Future Battlefield Pack Orbital/units/Colonisation/Aeon/Laserfences/UAB0208/UAB0208_lod0.scm',
+					AlbedoName = '/mods/Future Battlefield Pack Orbital/units/Colonisation/Aeon/Laserfences/UAB0208/UAB0208_albedo.dds',
+					SpecularName = '/mods/Future Battlefield Pack Orbital/units/Colonisation/Aeon/Laserfences/UAB0208/UAB0208_specteam.dds',
+					NormalName = '/mods/Future Battlefield Pack Orbital/units/Colonisation/Aeon/Laserfences/UAB0208/UAB0208_normalsts.dds',
                     LODCutoff = 200,
                     ShaderName = 'Aeon',
                 },
@@ -91,9 +94,7 @@ UnitBlueprint {
     General = {
         BuildBones = {
             BuildEffectBones = {
-                'Effect1',
-				'Effect2',
-				'Effect3',
+                'Effect',
             },
         },
         CapCost = 0.1,
@@ -149,14 +150,14 @@ UnitBlueprint {
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = 0,
         SkirtOffsetZ = 0,
-        SkirtSizeX = 1,
+        SkirtSizeX = 3,
         SkirtSizeZ = 1,
         TurnRate = 0,
     },
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,
     SelectionThickness = 0.66,
-    SizeX = 1,
+    SizeX = 3,
     SizeY = 0.4,
     SizeZ = 1,
     StrategicIconName = 'icon_structure_wall',
