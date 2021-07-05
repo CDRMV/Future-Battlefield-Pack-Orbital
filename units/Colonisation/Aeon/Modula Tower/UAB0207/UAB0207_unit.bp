@@ -58,7 +58,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = 'Module Tower Foundation',
+    Description = 'Foundation Module',
     Display = {
 	    BuildAttachBone = 'Attachpoint',
         Mesh = {
@@ -152,7 +152,7 @@ UnitBlueprint {
     SizeX = 3.6,
     SizeY = 1,
     SizeZ = 3.6,
-    StrategicIconName = 'icon_factory1_land',
+    StrategicIconName = 'icon_factory2_land',
     StrategicIconSortPriority = 220,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
