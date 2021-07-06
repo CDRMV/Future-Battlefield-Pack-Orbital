@@ -66,8 +66,6 @@ UnitBlueprint {
         'SELECTABLE',
         'AIR',
         'AEON',
-		'BUILTBYTIER1ORBITALENGINEER',
-		'BUILTBYTIER2ORBITALENGINEER',
 		'BUILTBYTIER3ORBITALENGINEER',
         'ORBITAL',
         'STRUCTURE',
@@ -78,7 +76,7 @@ UnitBlueprint {
         'SATELLITE',
         'HIGHALTAIR',
         'RALLYPOINT',
-        'TECH1',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',
@@ -96,7 +94,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 1,
     },
-    Description = 'Orbital Factory',
+    Description = 'Orbital Spaceship Yard',
     Display = {
         Abilities = {
             '<LOC ability_upgradable>Upgradeable',
@@ -106,21 +104,15 @@ UnitBlueprint {
             IconFadeInZoom = 230,
             LODs = {
                 {
-                    LODCutoff = 200,
+                    LODCutoff = 800,
                     Scrolling = true,
                     ShaderName = 'Unit',
-                },
-                {
-                    AlbedoName = 'uasos1000_albedo.dds',
-                    LODCutoff = 900,
-                    ShaderName = 'Unit',
-                    SpecularName = 'uasos1000_specteam.dds',
                 },
             },
         },
         PlaceholderMeshName = 'UXB0000',
         SpawnRandomRotation = false,
-        UniformScale = 0.5,
+        UniformScale = 0.35,
     },
     Economy = {
         BuildCostEnergy = 2600,
@@ -132,10 +124,8 @@ UnitBlueprint {
         InitialRallyX = 0,
         InitialRallyZ = 10,
         BuildableCategory = {
-		    'BUILTBYTIER1ORBITALFACTORY AEON ORBITALSHIPYARD',
-            'BUILTBYTIER1ORBITALFACTORY AEON ORBITALENGINEER',
-            'BUILTBYTIER1ORBITALFACTORY AEON ORBITALMOBILESATELLITESTRUCTURE',
-            'BUILTBYTIER1ORBITALFACTORY AEON SPACESHIP',
+            'BUILTBYTIER3ORBITALSPACESHIPYARD AEON ORBITALENGINEER',
+            'BUILTBYTIER3ORBITALSPACESHIPYARD AEON SPACESHIP',
         },
     },
 	Footprint = {
@@ -145,8 +135,10 @@ UnitBlueprint {
     General = {
         BuildBones = {
             BuildEffectBones = {
-                'B_Effect1',
-                'B_Effect2',
+                'Build_Effect01',
+                'Build_Effect02',
+				'Build_Effect03',
+                'Build_Effect04',
             },
         },
         Category = 'Factory',
@@ -193,7 +185,7 @@ UnitBlueprint {
             LAYER_Sub = false,
             LAYER_Water = false,
         },
-        Elevation = 60,
+        Elevation = 50,
         MeshExtentsX = 12,
         MeshExtentsY = 5,
         MeshExtentsZ = 12,

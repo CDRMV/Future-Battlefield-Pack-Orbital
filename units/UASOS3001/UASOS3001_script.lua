@@ -9,7 +9,17 @@
 
 local AAirFactoryUnit = import('/lua/aeonunits.lua').AAirFactoryUnit 
 
-UASOS1000 = Class(AAirFactoryUnit) {
+UASOS3001 = Class(AAirFactoryUnit) {
+    OnStopBeingBuilt = function(self)
+        AAirFactoryUnit.OnStopBeingBuilt(self)
+        self.Spinners = {
+            Spinner1 = CreateRotator(self, 'Body', 'y', nil, 0, 60, 360):SetTargetSpeed(2),
+        }
+        for k, v in self.Spinners do
+            self.Trash:Add(v)
+        end
+    end,
+
 }
 
-TypeClass = UASOS1000
+TypeClass = UASOS3001
