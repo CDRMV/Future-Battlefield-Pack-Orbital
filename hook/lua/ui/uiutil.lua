@@ -16,7 +16,7 @@ local MyUnitIdTable = {
    uab0208c=true, -- Aeon Tech 2 Laserfence Long Vertical
    uab0208d=true, -- Aeon Tech 2 Laserfence Long Horizontal
    
-    -- Aeon Modula Tower
+   -- Aeon Modula Tower
 
    uab0207=true, -- Aeon Tech 2 Foundation Module
    uab0207a=true, -- Aeon Tech 2 Solar Energy Module
@@ -24,6 +24,12 @@ local MyUnitIdTable = {
    uab0207c=true, -- Aeon Tech 2 Mass Storage Module
    uab0207d=true, -- Aeon Tech 2 Mass Fabricator Module
    uab0207e=true, -- Aeon Tech 2 Habitat Module
+   
+   -- Aeon Planetary Orbital Factories 
+
+   uab0106=true, -- Aeon Tech 1 Planetary Orbital Factory
+   uab0206=true, -- Aeon Tech 2 Planetary Orbital Factory
+   uab0306=true, -- Aeon Tech 3 Planetary Orbital Factory
 
  -- Aeon Spaceships and Orbitalengineers
 

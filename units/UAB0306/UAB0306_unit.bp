@@ -105,7 +105,7 @@ UnitBlueprint {
                 Width = 16.8,
             },
         },
-        UniformScale = 0.2,
+        UniformScale = 2.0,
     },
     Economy = {
         BuildCostEnergy = 2600,
@@ -124,10 +124,10 @@ UnitBlueprint {
     General = {
         BuildBones = {
             BuildEffectBones = {
-                'Drone1_Muzzle',
-                'Drone2_Muzzle',
-				'Drone3_Muzzle',
-                'Drone4_Muzzle',
+                'Build01',
+                'Build02',
+				'Build03',
+                'Build04',
             },
         },
         Category = 'Factory',
@@ -149,7 +149,7 @@ UnitBlueprint {
         },
         ConstructionBar = true,
         FactionName = 'Aeon',
-        Icon = 'air',
+        Icon = 'orbit',
         SelectionPriority = 3,
         TechLevel = 'RULEUTL_Basic',
         UnitWeight = 1,
