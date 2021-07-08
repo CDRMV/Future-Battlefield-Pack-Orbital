@@ -21,11 +21,20 @@ local MyUnitIdTable = {
    uab0207d=true, -- Aeon Tech 2 Mass Fabricator Module
    uab0207e=true, -- Aeon Tech 2 Habitat Module
    
-   -- Aeon Planetary Orbital Factories 
+   -- Aeon Planetary Spaceship Yards
 
-   uab0106=true, -- Aeon Tech 1 Planetary Orbital Factory
-   uab0206=true, -- Aeon Tech 2 Planetary Orbital Factory
-   uab0306=true, -- Aeon Tech 3 Planetary Orbital Factory
+   uab0106=true, -- Aeon Tech 1 Planetary Spaceship Yard
+   uab0206=true, -- Aeon Tech 2 Planetary Spaceship Yard
+   uab0306=true, -- Aeon Tech 3 Planetary Spaceship Yard
+   
+  -- Aeon Planetary Orbital Spaceship Yards (with Capital)
+
+   uasos1000=true, -- Aeon Tech 1 Orbital Spaceship Yard
+   uasos1001=true, -- Aeon Tech 1 Orbital Capital Spaceship Yard
+   uasos2000=true, -- Aeon Tech 1 Orbital Spaceship Yard
+   uasos2001=true, -- Aeon Tech 1 Orbital Capital Spaceship Yard
+   uasos3000=true, -- Aeon Tech 1 Orbital Spaceship Yard
+   uasos3001=true, -- Aeon Tech 1 Orbital Capital Spaceship Yard
 
    -- Aeon Spaceships and Orbitalengineers
 
