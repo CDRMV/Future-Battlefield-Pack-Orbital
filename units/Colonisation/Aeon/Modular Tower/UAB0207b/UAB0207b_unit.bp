@@ -39,13 +39,16 @@ UnitBlueprint {
         'AEON',
         'STRUCTURE',
 		'CONSTRUCTION',
+		'ECONOMIC',
         'ENGINEER',
+		'ENERGYSTORAGE',
         'SIZE4',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SORTDEFENSE',
+        'SORTECONOMY',
         'MODULATOWERMODULE',
+		'CQUEMOV', --"CQUEMOV" enables the selection and move commands during construction
     },
     Defense = {
         AirThreatLevel = 0,
@@ -87,7 +90,7 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Defense',
+        Category = 'Economy',
         Classification = 'RULEUC_Factory',
         ConstructionBar = true,
         FactionName = 'Aeon',
@@ -121,7 +124,7 @@ UnitBlueprint {
         MeshExtentsY = 0,
         MeshExtentsZ = 0,
 
-        MotionType = 'RULEUMT_None',
+        MotionType = 'RULEUMT_Land',
         SkirtOffsetX = 0,
         SkirtOffsetZ = 0,
         SkirtSizeX = 1,

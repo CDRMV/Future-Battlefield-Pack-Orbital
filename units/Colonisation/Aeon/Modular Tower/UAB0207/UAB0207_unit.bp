@@ -33,19 +33,21 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 10,
     Categories = {
-        'BUILTBYMODULATOWERFOUNDATION',
-		'BUILTBYMODULATOWERMODULE',
         'SELECTABLE',
+        'BUILTBYTIER2ENGINEER',
         'AEON',
         'STRUCTURE',
-		'CONSTRUCTION',
+        'CONSTRUCTION',
         'ENGINEER',
+        'SHOWQUEUE',
+        'DRAGBUILD',
         'SIZE4',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTDEFENSE',
-        'MODULATOWERMODULE',
+        'MODULATOWERFOUNDATION',
+		'CQUEMOV', --"CQUEMOV" enables the selection and move commands during construction
     },
     Defense = {
         AirThreatLevel = 0,
@@ -57,9 +59,9 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = 'Solar Energy Module',
+    Description = 'Foundation Module',
     Display = {
-		BuildAttachBone = 'Attachpoint',
+	    BuildAttachBone = 'Attachpoint',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -70,6 +72,8 @@ UnitBlueprint {
                 },
             },
         },
+        PlaceholderMeshName = 'UXB0006',
+        SpawnRandomRotation = true,
         UniformScale = 0.95,
     },
     Economy = {
@@ -77,19 +81,35 @@ UnitBlueprint {
         BuildCostMass = 1200,
         BuildTime = 2000,
         BuildRate = 10,
-		BuildableCategory = {
-            'BUILTBYMODULATOWERMODULE AEON',
+        BuildableCategory = {
+            'BUILTBYMODULATOWERFOUNDATION AEON',
         },
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
+        SizeX = 5,
+        SizeZ = 5,
     },
     General = {
+        BuildBones = {
+            BuildEffectBones = {0},
+        },
         Category = 'Defense',
         Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Pause = true,
+            RULEUCC_Stop = true,
+        },
         ConstructionBar = true,
         FactionName = 'Aeon',
+        ToggleCaps = {
+            RULEUTC_SpecialToggle= true,
+        },
+        OrderOverrides = {
+            RULEUTC_SpecialToggle= {
+                bitmapId = 'Nuke',
+                helpText = 'removestorage',
+            },
+        },
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
@@ -105,7 +125,7 @@ UnitBlueprint {
     LifeBarOffset = 1.9,
     LifeBarSize = 4.5,
     Physics = {
-	    BankingSlope = 0,
+        BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Air = false,
             LAYER_Land = true,
@@ -116,15 +136,15 @@ UnitBlueprint {
         },
         FlattenSkirt = false,
 
-        MeshExtentsX = 0,
-        MeshExtentsY = 0,
-        MeshExtentsZ = 0,
+        MeshExtentsX = 3.2,
+        MeshExtentsY = 2.2,
+        MeshExtentsZ = 3.2,
 
         MotionType = 'RULEUMT_None',
-        SkirtOffsetX = 0,
-        SkirtOffsetZ = 0,
-        SkirtSizeX = 1,
-        SkirtSizeZ = 1,
+
+
+        SkirtSizeX = 0,
+        SkirtSizeZ = 0,
 
     },
     SelectionSizeX = 2.75,
@@ -133,7 +153,7 @@ UnitBlueprint {
     SizeX = 3.6,
     SizeY = 1,
     SizeZ = 3.6,
-    StrategicIconName = 'icon_structure2_energy',
+    StrategicIconName = 'icon_factory2_land',
     StrategicIconSortPriority = 220,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',

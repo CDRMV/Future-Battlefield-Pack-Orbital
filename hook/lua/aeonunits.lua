@@ -11,6 +11,14 @@ AModulaTowerUnit = Class(FactoryUnit) {
 
     BuildAttachBone = 'Attachpoint',
 
+    StartBeingBuiltEffects = function(self, builder, layer)
+		FactoryUnit.StartBeingBuiltEffects(self, builder, layer)
+    end,
+    
+    StopBeingBuiltEffects = function(self, builder, layer)
+		FactoryUnit.StopBeingBuiltEffects(self, builder, layer)    
+    end,
+	
     OnCreate = function(self,builder,layer)
         self:AddBuildRestriction(categories.ANTINAVY)
         self:AddBuildRestriction(categories.HYDROCARBON)

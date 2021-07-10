@@ -38,16 +38,18 @@ UnitBlueprint {
         'SELECTABLE',
         'AEON',
         'STRUCTURE',
-        'CONSTRUCTION',
-        'FACTORY',
-        'SHOWQUEUE',
-        'DRAGBUILD',
+		'CONSTRUCTION',
+        'ENGINEER',
+		'ECONOMIC',
+		'MASSPRODUCTION',
+        'MASSFABRICATION',
         'SIZE4',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'SORTDEFENSE',
+        'SORTECONOMY',
         'MODULATOWERMODULE',
+		'CQUEMOV', --"CQUEMOV" enables the selection and move commands during construction
     },
     Defense = {
         AirThreatLevel = 0,
@@ -90,7 +92,7 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-        Category = 'Defense',
+        Category = 'Economy',
         Classification = 'RULEUC_Factory',
 		CommandCaps = {
             RULEUCC_Pause = true,

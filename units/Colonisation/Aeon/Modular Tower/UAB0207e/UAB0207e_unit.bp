@@ -46,6 +46,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SORTDEFENSE',
         'MODULATOWERMODULE',
+		'CQUEMOV', --"CQUEMOV" enables the selection and move commands during construction
     },
     Defense = {
         AirThreatLevel = 0,
@@ -57,7 +58,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = 'Mass Storage Module',
+    Description = 'Habitat Module',
     Display = {
 		BuildAttachBone = 'Attachpoint',
         Mesh = {
@@ -73,11 +74,11 @@ UnitBlueprint {
         UniformScale = 0.95,
     },
     Economy = {
-        BuildCostEnergy = 12000,
-        BuildCostMass = 1200,
-        BuildTime = 2000,
-        BuildRate = 10,
-        StorageMass = 10000,
+        BuildCostEnergy = 2100,
+        BuildCostMass = 240,
+        BuildTime = 300,
+        StorageEnergy = 0,
+        StorageMass = 80,
 		BuildableCategory = {
             'BUILTBYMODULATOWERMODULE AEON',
         },
@@ -89,8 +90,21 @@ UnitBlueprint {
     General = {
         Category = 'Defense',
         Classification = 'RULEUC_Factory',
+		CommandCaps = {
+            RULEUCC_Pause = true,
+            RULEUCC_Stop = true,
+        },
         ConstructionBar = true,
         FactionName = 'Aeon',
+		ToggleCaps = {
+            RULEUTC_SpecialToggle= true,
+        },
+        OrderOverrides = {
+            RULEUTC_SpecialToggle= {
+                bitmapId = 'Nuke',
+                helpText = 'removestorage',
+            },
+        },
         Icon = 'land',
         SelectionPriority = 5,
         TechLevel = 'RULEUTL_Basic',
@@ -134,7 +148,7 @@ UnitBlueprint {
     SizeX = 3.6,
     SizeY = 1,
     SizeZ = 3.6,
-    StrategicIconName = 'icon_structure2_mass',
+    StrategicIconName = 'icon_structure2_generic',
     StrategicIconSortPriority = 220,
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
