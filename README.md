@@ -13,6 +13,11 @@ Only official Releases can be uploaded by someone in the future.
 
 But you will need my permission for that first of course.
 
+
+To build any Orbitalfactories or Yards make sure to build them not directly over Ground Structures.
+Otherwise thse Buildings will not able to build any Spaceunits.
+This is already a known Issue 
+
 Install Instructions:
 1) Download the Zip File 
 2) The Zip File and the Folder in it is called: Future-Battlefield-Pack-Orbital-master
