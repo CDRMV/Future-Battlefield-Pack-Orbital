@@ -79,8 +79,6 @@ UnitBlueprint {
         'HIGHALTAIR',
         'SHIELD',
         'RALLYPOINT',
-        'NEEDMOBILEBUILD',
-        'DRAGBUILD',
         'TECH1',
         'SIZE16',
         'VISIBLETORECON',
