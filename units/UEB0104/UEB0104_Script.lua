@@ -56,8 +56,7 @@ UEB0104 = Class(TStructureUnit) {
 			
             # Release unit
             if newSat then
-                self.Satellite:DetachFrom()
-                self.Satellite:Open()      
+                self.Satellite:DetachFrom()  
             end
         end,
     },   
