@@ -117,7 +117,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 800,
                     Scrolling = true,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Aeon',
                 },
             },
         },

@@ -31,6 +31,12 @@ local MyUnitIdTable = {
    uab0206=true, -- Aeon Tech 2 Planetary Spaceship Yard
    uab0306=true, -- Aeon Tech 3 Planetary Spaceship Yard
    
+   -- Aeon Tradestation and Tradeships
+
+   uasos2006=true, -- Aeon Tech 2 Tradestation
+   
+   uactsp0200=true, -- Aeon Tech 2 Cargo/Tradeship
+   
   -- Aeon Planetary Orbital Spaceship Yards (with Capital)
 
    uasos1000=true, -- Aeon Tech 1 Orbital Spaceship Yard
