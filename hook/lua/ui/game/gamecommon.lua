@@ -50,7 +50,13 @@ local MyUnitIdTable = {
    uasp0200=true, -- Aeon Tech 2 Orbital Engineer
    uasp0201=true, -- Aeon Tech 2 Destroyer (Spaceship)
    uasp0202=true, -- Aeon Tech 2 Cruiser (Spaceship)
+   uasp0203=true, -- Aeon Tech 2 Cruiser (Spaceship)
    uasp0300=true, -- Aeon Tech 3 Orbital Engineer
+   uasp0302=true, -- Aeon Tech 3 Star Dreadnought (Spaceship)
+   
+ -- Aeon Starfighters and -bombers
+   uafsf100=true, -- Aeon Tech 1 Basic Starfighter
+   uafsf101=true, -- Aeon Tech 1 Basic Starbomber
 }
 
 	local IconPath = "/Mods/Future Battlefield Pack Orbital"

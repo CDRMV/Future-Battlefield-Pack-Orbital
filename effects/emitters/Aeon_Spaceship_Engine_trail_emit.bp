@@ -1,6 +1,6 @@
 BeamBlueprint {
     Lifetime = 1.0,
-    TextureName = '/textures/particles/beam_exhaust_stream_purple_01.dds',
+    TextureName = '/mods/Future Battlefield Pack Orbital/textures/particles/aeon_engine_beam.dds',
     Thickness = 0.045,
     StartColor = {x=0.95,y=0.95,z=0.95,w=0}, # R,G,B,A
     EndColor = {x=0.0,y=0.0,z=0,w=0}, # R,G,B,A

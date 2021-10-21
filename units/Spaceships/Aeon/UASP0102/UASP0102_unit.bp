@@ -1,9 +1,13 @@
 UnitBlueprint {
     AI = {
-        GuardReturnRadius = 120,
-		GuardScanRadius = 110,
+        GuardReturnRadius = 175,
+        GuardScanRadius = 125,
+        RefuelingMultiplier = 50,
+        RefuelingRepairAmount = 500,
+        RepairConsumeEnergy = 5,
+        RepairConsumeMass = 0.5,
         TargetBones = {
-           		'UEFOSS101',
+            'UASP0102',
         },
     },
     Air = {
@@ -12,6 +16,7 @@ UnitBlueprint {
         CanFly = true,
         KLift = 0.4,
         KLiftDamping = 2.5,
+		HoverOverAttack = true,
         KMove = 1,
         KMoveDamping = 2,
         KTurn = 0.4,
@@ -82,6 +87,10 @@ UnitBlueprint {
         'ORBITAL',
         'SHIELD',
         'SPACESHIP',
+		'AIRSTAGINGPLATFORM',
+        'REPAIR',
+        'CARRIER',
+        'FACTORY',
         'HIGHALTAIR',
         'ANTIAIR',
         'TECH1',
@@ -98,14 +107,14 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.25,
     Defense = {
-        AirThreatLevel = 0,
-        ArmorType = 'Light',
+        AirThreatLevel = 85,
+        ArmorType = 'Normal',
         EconomyThreatLevel = 0,
-        Health = 2500,
-        MaxHealth = 2500,
-        RegenRate = 1,
+        Health = 20000,
+        MaxHealth = 20000,
+        RegenRate = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 1,
+        SurfaceThreatLevel = 8,
         Shield = {
             ImpactEffects = 'UEFShieldHit01',
             OwnerShieldMesh = '/mods/Future Battlefield Pack Orbital/units/Spaceships/Aeon/UASP0102/UASP0102_PersonalShield_mesh',
@@ -156,14 +165,16 @@ UnitBlueprint {
         UniformScale = 0.13,
     },
     Economy = {
-        BuildCostEnergy = 900,
-        BuildCostMass = 450,
-        BuildTime = 950,
-        StorageEnergy = 0,
-        StorageMass = 0,
+        BuildCostEnergy = 15000,
+        BuildCostMass = 2000,
+        BuildTime = 5000,
+		BuildRate = 5,
         TeleportEnergyMod = 0.10,
         TeleportMassMod = 0,
         TeleportTimeMod = 0.10,
+		BuildableCategory = {
+            'BUILTBYTIER1ORBITALHANGARBAY AEON',
+        },
     },
     General = {
         Category = 'Defense',
@@ -182,12 +193,17 @@ UnitBlueprint {
 			RULEUCC_Teleport = true,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
-            RULEUCC_Transport = false,
+            RULEUCC_Transport = true,
         },
+		ConstructionBar = true,
         OrderOverrides = {
             RULEUTC_ShieldToggle = {
                 bitmapId = 'shield-personal',
                 helpText = 'toggle_shield_personal',
+            },
+			RULEUCC_Transport = {
+                bitmapId = 'deploy',
+                helpText = 'deploy',
             },
         },  
         ToggleCaps = {
@@ -197,7 +213,7 @@ UnitBlueprint {
         Icon = 'orbit',
         SelectionPriority = 3,
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Mercury Class',
+        UnitName = 'Zidani Class',
         UnitWeight = 1,
     },
     Intel = {
@@ -239,9 +255,11 @@ UnitBlueprint {
     SizeZ = 3.0,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 165,
-	Transport = {
+    Transport = {
         AirClass = true,
+        Class4AttachSize = 0,
         ClassGenericUpTo = 2,
+        StorageSlots = 4,
         TransportClass = 10,
     },
     Veteran = {

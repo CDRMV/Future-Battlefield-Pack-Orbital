@@ -1,0 +1,10 @@
+BeamBlueprint {
+    Lifetime = 0.5,
+    TextureName = '/mods/Future Battlefield Pack Orbital/textures/particles/aeon_engine_beam.dds',
+    Thickness = 0.7,
+    StartColor = {x=0.95,y=0.95,z=0.95,w=0}, # R,G,B,A
+    EndColor = {x=0.0,y=0.0,z=0,w=0}, # R,G,B,A
+    Length = 2,
+    UShift = 0.0,
+    VShift = -0.45,
+}
