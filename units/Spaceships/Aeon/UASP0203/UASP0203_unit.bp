@@ -195,7 +195,7 @@ UnitBlueprint {
         Icon = 'orbit',
         SelectionPriority = 3,
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Mercury Class',
+        UnitName = 'Vianom Class',
         UnitWeight = 1,
     },
     Intel = {
