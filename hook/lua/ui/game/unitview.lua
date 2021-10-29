@@ -57,6 +57,10 @@ local MyUnitIdTable = {
  -- Aeon Starfighters and -bombers
    uafsf100=true, -- Aeon Tech 1 Basic Starfighter
    uafsf101=true, -- Aeon Tech 1 Basic Starbomber
+   
+ -- Aeon Shuttles
+   uafsf203=true, -- Aeon Tech 2 Drop Shuttle
+   uafsf303=true, -- Aeon Tech 3 Drop Shuttle
 }
 
 	local IconPath = "/Mods/Future Battlefield Pack Orbital"

@@ -168,6 +168,7 @@ UnitBlueprint {
 		BuildableCategory = {
             'BUILTBYTIER1ORBITALHANGARBAY AEON',
             'BUILTBYTIER2ORBITALHANGARBAY AEON',
+			'BUILTBYTIER3ORBITALHANGARBAY AEON',
         },
     },
     General = {
