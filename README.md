@@ -1,5 +1,5 @@
 # Future-Battlefield-Pack-Orbital
-![FBPO Logo](images/FBPO_icon.png)
+![FBPO Logo](/images/FBPO_icon.png)
 
 --------------------------------------------------------------------------------------------------------------------
 
