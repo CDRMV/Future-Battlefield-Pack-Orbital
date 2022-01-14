@@ -4,7 +4,7 @@
 (Currently in Development)
 
 FBP Orbital has now get an public Github Wiki.   
-it includes several Documentations for these following Topics:
+It includes several Documentations for these following Topics:
 - Unit Databases (for all Factions) 
 - Introduction for the new Techlevels
 
