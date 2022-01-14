@@ -1,21 +1,26 @@
 ![](images/FBPO_icon.png)
 
 --------------------------------------------------------------------------------------------------------------------
-# Important
+# Github WIKI
 
-Please Remember that this is an Early Access Version of this Mod.   
-So it is not the final Release.   
-It is not allowed to Upload it somewhere without my permission.   
-Only official Releases can be uploaded by someone in the future.   
-But you will need my permission for that first of course.   
+(Currently in Development)
+
+FBP Orbital has now get an public Github Wiki 
+it includes several Documentations for these following Topics:
+- Unit Databases (for all Factions) 
+- Techlevels
+
 
 --------------------------------------------------------------------------------------------------------------------
 
-Install Instructions:
-1) Download the Zip File 
-2) The Zip File and the Folder in it is called: Future-Battlefield-Pack-Orbital-master
-3) Extract or Copy the Folder Future-Battlefield-Pack-Orbital-master to your Mods Dictionary 
-4) Rename the Folder Future-Battlefield-Pack-Orbital-master to Future Battlefield Pack Orbital. 
-5) Activate the Mod in the Mod manager 
-6) Enjoy 
+--------------------------------------------------------------------------------------------------------------------
+# Important
+
+This Github Repository can be used to get an Early Access Version of this Mod. 
+You can find additional Informations and Install Instructions here:
+https://github.com/CDRMV/Future-Battlefield-Pack-Orbital/wiki/3.-Installation
+
+--------------------------------------------------------------------------------------------------------------------
+
+
 
