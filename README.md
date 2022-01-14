@@ -1,7 +1,7 @@
 ![](images/FBPO_icon.png)
 
 --------------------------------------------------------------------------------------------------------------------
-# Github WIKI
+## Github WIKI
 
 (Currently in Development)
 
@@ -17,7 +17,7 @@ https://github.com/CDRMV/Future-Battlefield-Pack-Orbital/wiki/1.-Home
 --------------------------------------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------------------------------------
-# Important
+## Early Access
 
 This Github Repository can be used to get an Early Access Version of this Mod.    
 You can find additional Informations and Install Instructions here:   
