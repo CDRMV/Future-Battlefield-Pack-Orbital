@@ -1,13 +1,5 @@
 # Future-Battlefield-Pack-Orbital
-Addon for the Future Battlefield Pack Mod, which adds a new Orbital Techtree and Units to the Game.
-
-Important:
-
-If you want to build any Orbitalfactories or Yards make sure to build them not directly over Ground Structures.
-
-Otherwise these Buildings will not able to build any Spaceunits.
-
-This is already a known Issue 
+![FBPO Logo](images/FBPO_icon.png)
 
 --------------------------------------------------------------------------------------------------------------------
 
