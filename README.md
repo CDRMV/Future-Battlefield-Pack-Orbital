@@ -5,7 +5,7 @@
 
 (Currently in Development)
 
-FBP Orbital has now get an public Github Wiki 
+FBP Orbital has now get an public Github Wiki.   
 it includes several Documentations for these following Topics:
 - Unit Databases (for all Factions) 
 - Techlevels
