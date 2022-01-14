@@ -9,7 +9,7 @@ It includes several Documentations for these following Topics:
 - Introduction for the new Techlevels
 
 You can find the Wike here:   
-https://github.com/CDRMV/Future-Battlefield-Pack-Orbital/wiki/1.-Home
+https://github.com/CDRMV/Future-Battlefield-Pack-Orbital/wiki
 
 --------------------------------------------------------------------------------------------------------------------
 ## Early Access
