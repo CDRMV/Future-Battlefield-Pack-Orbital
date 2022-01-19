@@ -8,7 +8,7 @@ It includes several Documentations for these following Topics:
 - Unit Databases (for all Factions) 
 - Introduction for the new Techlevels
 
-You can find the Wike here:   
+You can find the Wiki here:   
 https://github.com/CDRMV/Future-Battlefield-Pack-Orbital/wiki
 
 --------------------------------------------------------------------------------------------------------------------
