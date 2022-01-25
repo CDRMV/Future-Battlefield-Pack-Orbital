@@ -16,7 +16,7 @@ https://github.com/CDRMV/Future-Battlefield-Pack-Orbital/wiki
 
 This Github Repository can be used to get an Early Access Version of this Mod.    
 You can find additional Informations and Install Instructions here:   
-https://github.com/CDRMV/Future-Battlefield-Pack-Orbital/wiki/3.-Installation
+https://github.com/CDRMV/Future-Battlefield-Pack-Orbital/wiki/Installation
 
 --------------------------------------------------------------------------------------------------------------------
 
