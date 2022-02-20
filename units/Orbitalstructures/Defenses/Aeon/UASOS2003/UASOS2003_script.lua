@@ -8,9 +8,13 @@
 #****************************************************************************
 
 local AAirUnit  = import('/lua/aeonunits.lua').AAirUnit 
+local FBPOWeaponFile = import('/mods/Future Battlefield Pack Orbital/lua/FBPOweapons.lua')
+local ADFOrbWeapon = FBPOWeaponFile.ADFOrbWeapon
 
 UASOS2003 = Class(AAirUnit) {
-
+	Weapons = {
+		AOOrbGun = Class(ADFOrbWeapon) {},
+    },
 }
 
 TypeClass = UASOS2003

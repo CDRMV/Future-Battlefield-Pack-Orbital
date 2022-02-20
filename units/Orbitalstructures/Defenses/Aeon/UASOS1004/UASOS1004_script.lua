@@ -8,9 +8,12 @@
 #****************************************************************************
 
 local AAirUnit  = import('/lua/aeonunits.lua').AAirUnit 
+local AAAZealotMissileWeapon = import('/lua/aeonweapons.lua').AAAZealotMissileWeapon
 
 UASOS1004 = Class(AAirUnit) {
-
+	Weapons = {
+		ASFMissiles = Class(AAAZealotMissileWeapon) {},
+    },
 }
 
 TypeClass = UASOS1004

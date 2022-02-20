@@ -1,0 +1,81 @@
+ProjectileBlueprint {
+    Audio = {
+        Impact = Sound {
+            Bank = 'Explosions',
+            Cue = 'Explosion_Bomb',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'Explosions',
+            Cue = 'Explosion_Bomb',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactWater = Sound {
+            Bank = 'Impacts',
+            Cue = 'Impact_Water_Splash_CYBRAN',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+    Categories = {
+        'AEON',
+        'PROJECTILE',
+        'INDIRECTFIRE',
+        'TACTICAL',
+        'MISSILE',
+        'NOSPLASHDAMAGE',
+    },
+    Defense = {
+        Health = 2000,
+        MaxHealth = 2000,
+    },
+    Display = {
+        CameraFollowTimeout = 2,
+        CameraFollowsProjectile = true,
+        ImpactEffects = {
+            Scale = 0.25,
+            Type = 'Small02',
+        },
+        Mesh = {
+            LODs = {
+                {
+                    LODCutoff = 150,
+                    ShaderName = 'Unit',
+                },
+            },
+        },
+        StrategicIconSize = 1,
+        UniformScale = 1.1,
+    },
+    General = {
+        Category = 'Missile',
+        EntityCategory = {
+            'AEON',
+            'PROJECTILE',
+            'INDIRECTFIRE',
+            'MISSILE',
+            'NOSPLASHDAMAGE',
+        },
+        Faction = 'Aeon',
+        Weapon = 'Neutron Cluster Bomb',
+    },
+	Economy = {
+        BuildCostEnergy = 3600,
+        BuildCostMass = 180,
+        BuildTime = 2400,
+    },
+    Interface = {
+        HelpText = 0,
+    },
+    Physics = {
+        Acceleration = 3,
+        DestroyOnWater = true,
+        InitialSpeed = 3,
+        MaxSpeed = 12,
+        MaxZigZag = 0,
+        TrackTarget = true,
+        TrackTargetGround = true,
+        TurnRate = 0,
+        VelocityAlign = true,
+        ZigZagFrequency = 0,
+    },
+}

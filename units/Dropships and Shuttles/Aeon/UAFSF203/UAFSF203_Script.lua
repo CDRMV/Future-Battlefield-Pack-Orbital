@@ -9,8 +9,14 @@
 #****************************************************************************
 
 local AAirUnit = import('/lua/aeonunits.lua').AAirUnit
+local ADFLaserLightWeapon = import('/lua/aeonweapons.lua').ADFLaserLightWeapon
 
 UAFSF203 = Class(AAirUnit) {
+
+	Weapons = {
+        ASFLaser = Class(ADFLaserLightWeapon) {},
+		ASFEnergyDrone = Class(ADFLaserLightWeapon) {},
+    },
 	
 	OnStopBeingBuilt = function(self,builder,layer)
         AAirUnit.OnStopBeingBuilt(self,builder,layer)

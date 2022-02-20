@@ -1,0 +1,57 @@
+ProjectileBlueprint {
+    Audio = {
+        Impact = Sound {
+            Bank = 'Impacts',
+            Cue = 'AEON_Expl_Med_Impact',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'Impacts',
+            Cue = 'Impact_Land_Gen_AEON',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactWater = Sound {
+            Bank = 'Impacts',
+            Cue = 'Impact_Water_Splash_AEON',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+    Categories = {
+        'AEON',
+        'PROJECTILE',
+        'DIRECTFIRE',
+    },
+    Display = {
+        ImpactEffects = {
+            Type = 'Med01',
+        },
+        StrategicIconSize = 3,
+    },
+    General = {
+        Category = 'Direct Fire',
+        EntityCategory = {
+            'AEON',
+            'PROJECTILE',
+            'DIRECTFIRE',
+        },
+        Faction = 'Aeon',
+        TechLevel = 4,
+        Weapon = 'Fragmentation Artillery',
+    },
+    Interface = {
+        HelpText = 0,
+    },
+    Physics = {
+        Acceleration = 100,
+        DestroyOnWater = true,
+        InitialSpeed = 80,
+        InitialSpeedRange = 0,
+        LeadTarget = true,
+		UseGravity = false,
+        MaxSpeed = 100,
+        RotationalVelocity = 0,
+        RotationalVelocityRange = 0,
+        TurnRate = 360,
+        VelocityAlign = true,
+    },
+}

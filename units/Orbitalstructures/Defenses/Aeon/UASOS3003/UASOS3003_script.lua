@@ -8,9 +8,17 @@
 #****************************************************************************
 
 local AAirUnit  = import('/lua/aeonunits.lua').AAirUnit 
+local FBPOWeaponFile = import('/mods/Future Battlefield Pack Orbital/lua/FBPOweapons.lua')
+local ADFOrbitalLaser = FBPOWeaponFile.ADFOrbitalLaser
+local ADFOrbWeapon = FBPOWeaponFile.ADFOrbWeapon
+local AAAZealotMissileWeapon = import('/lua/aeonweapons.lua').AAAZealotMissileWeapon
 
 UASOS3003 = Class(AAirUnit) {
-
+	Weapons = {
+		AOLMainGun = Class(ADFOrbitalLaser) {},
+		AOOrbGun = Class(ADFOrbWeapon) {},
+		ASFMissiles = Class(AAAZealotMissileWeapon) {},
+    },
 }
 
 TypeClass = UASOS3003

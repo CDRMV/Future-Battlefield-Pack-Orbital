@@ -9,14 +9,19 @@
 #****************************************************************************
 
 local AAirUnit = import('/lua/aeonunits.lua').AAirUnit
+local ADFLaserLightWeapon = import('/lua/aeonweapons.lua').ADFLaserLightWeapon
 
 UAFSF303 = Class(AAirUnit) {
+	Weapons = {
+        ASFLaser = Class(ADFLaserLightWeapon) {},
+		ASFEnergyDrone = Class(ADFLaserLightWeapon) {},
+    },
 	
 	OnStopBeingBuilt = function(self,builder,layer)
         AAirUnit.OnStopBeingBuilt(self,builder,layer)
 		
-		local unitsdb = {'ual0202','ual0202','ual0203','ual0111'}
-		local randomvalue = math.random(1,4)
+		local unitsdb = {'ual0202','ual0205','ual0203','ual0111'}
+		local randomvalue = math.random(1,5)
         LOG('Prebuild Dropunit')
         local position = self:GetPosition()
 		self.Station02 = CreateUnitHPR(unitsdb[randomvalue], self:GetArmy(), position.x, position.y, position.z, 0, 0, 0)

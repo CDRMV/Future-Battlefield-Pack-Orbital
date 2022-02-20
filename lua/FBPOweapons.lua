@@ -29,3 +29,29 @@ TDFOrbitalLightAntifighterLaserWeapon = Class(DefaultProjectileWeapon) {
     FxMuzzleFlash = {'/effects/emitters/flash_02_emit.bp' },
 }
 
+ADFOrbitalLaser = Class(DefaultProjectileWeapon) {
+    FxMuzzleFlash = {'/effects/emitters/reacton_cannon_muzzle_charge_01_emit.bp',
+                           '/effects/emitters/reacton_cannon_muzzle_charge_02_emit.bp',
+                           '/effects/emitters/reacton_cannon_muzzle_charge_03_emit.bp',
+                           '/effects/emitters/reacton_cannon_muzzle_flash_01_emit.bp',
+                           '/effects/emitters/reacton_cannon_muzzle_flash_02_emit.bp',
+                           '/effects/emitters/reacton_cannon_muzzle_flash_03_emit.bp',},
+}
+
+ADFHOrbitalLaser = Class(DefaultProjectileWeapon) {
+    FxMuzzleFlash = {'/effects/emitters/reacton_cannon_muzzle_charge_01_emit.bp',
+                           '/effects/emitters/reacton_cannon_muzzle_charge_02_emit.bp',
+                           '/effects/emitters/reacton_cannon_muzzle_charge_03_emit.bp',
+                           '/effects/emitters/reacton_cannon_muzzle_flash_01_emit.bp',
+                           '/effects/emitters/reacton_cannon_muzzle_flash_02_emit.bp',
+                           '/effects/emitters/reacton_cannon_muzzle_flash_03_emit.bp',},
+}
+
+ASFEnergyDroneWeapon = Class(DefaultProjectileWeapon) {
+    FxMuzzleFlash = EffectTemplate.CZealotLaunch01,
+}
+
+ADFOrbWeapon = Class(DefaultProjectileWeapon) {
+    FxMuzzleFlash = {'/effects/emitters/flash_04_emit.bp' },
+}
+

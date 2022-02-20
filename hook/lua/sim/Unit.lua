@@ -18,6 +18,30 @@ do
 	Unit = Class(UnitOld) {
 	
 	OnTeleportUnit = function(self, teleporter, location, orientation)
+	    local myposition = self:GetPosition()
+		local id = self:GetEntityId()
+	    for num, brain in ArmyBrains do
+            local unitList = brain:GetListOfUnits(categories.ANTITELEPORT, false)
+            for i, unit in unitList do
+                -- If it's an ally, then we skip.
+                if IsEnemy(self:GetArmy(), unit:GetArmy()) then
+                    local blockerRange = unit.NoTeleDistance
+                    if blockerRange then
+                        local blockerPosition = unit:GetPosition()
+                        local targetDest = VDist2(location[1], location[3], blockerPosition[1], blockerPosition[3])
+                        local sourceCheck = VDist2(myposition[1], myposition[3], blockerPosition[1], blockerPosition[3])
+                        if blockerRange and blockerRange >= targetDest then
+                            FloatingEntityText(id, 'Teleport Destination Scrambled')
+                            return
+                        elseif blockerRange and blockerRange >= sourceCheck then
+                            FloatingEntityText(id, 'Teleport Source Location Scrambled')
+                            return
+                        end
+                    end
+                end
+            end
+        end
+	
         if self.TeleportDrain then
             RemoveEconomyEvent( self, self.TeleportDrain)
             self.TeleportDrain = nil
@@ -31,7 +55,7 @@ do
     end,
 
     OnFailedTeleport = function(self)
-		if EntityCategoryContains(categories.SPACESHIP, self) then
+		if EntityCategoryContains(categories.SPACESHIP, self) or EntityCategoryContains(categories.CAPITALSPACESHIP, self) then
 	    if self.TeleportDrain then
             RemoveEconomyEvent( self, self.TeleportDrain)
             self.TeleportDrain = nil
@@ -63,7 +87,7 @@ do
     end,
 
     InitiateTeleportThread = function(self, teleporter, location, orientation)
-		if EntityCategoryContains(categories.SPACESHIP, self) then
+		if EntityCategoryContains(categories.SPACESHIP, self) or EntityCategoryContains(categories.CAPITALSPACESHIP, self) then
         local tbp = teleporter:GetBlueprint()
         local ubp = self:GetBlueprint()
         self.UnitBeingTeleported = self
@@ -169,40 +193,52 @@ do
     PlayHyperspaceChargeEffects = function(self, location, orientation)
         local army = self:GetArmy()
         local bp = self:GetBlueprint()
+		local EffectSize = bp.Physics.MeshExtentsX
+		local YOffset = 0
 		local faction = bp.General.FactionName
 		
 		if faction == 'UEF' then
         self.TeleportChargeBag = {}
         for k, v in FBPOEffectTemplates.UEFHyperspaceCharge01 do
-            local fx = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ + 3)
+            local fx = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ + 6)
+			fx:ScaleEmitter(EffectSize)
+			fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
             self.Trash:Add(fx)
             table.insert( self.TeleportChargeBag, fx)
         end
 		elseif faction == 'Cybran' then
         self.TeleportChargeBag = {}
         for k, v in FBPOEffectTemplates.CybranHyperspaceCharge01 do
-            local fx = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ + 3)
+            local fx = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ + 6)
+			fx:ScaleEmitter(EffectSize)
+			fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
             self.Trash:Add(fx)
             table.insert( self.TeleportChargeBag, fx)
         end
 		elseif faction == 'Aeon' then
         self.TeleportChargeBag = {}
         for k, v in FBPOEffectTemplates.AeonHyperspaceCharge01 do
-            local fx = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ + 3)
+            local fx = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ + 6)
+			fx:ScaleEmitter(EffectSize)
+			fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
             self.Trash:Add(fx)
             table.insert( self.TeleportChargeBag, fx)
         end
 		elseif faction == 'Seraphim' then
         self.TeleportChargeBag = {}
         for k, v in FBPOEffectTemplates.SeraphimHyperspaceCharge01 do
-            local fx = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ + 3)
+            local fx = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ + 6)
+			fx:ScaleEmitter(EffectSize)
+			fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
             self.Trash:Add(fx)
             table.insert( self.TeleportChargeBag, fx)
         end
 		else
 		self.TeleportChargeBag = {}
         for k, v in EffectTemplate.GenericTeleportCharge01 do
-            local fx = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ + 3)
+            local fx = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ + 6)
+			fx:ScaleEmitter(EffectSize)
+			fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
             self.Trash:Add(fx)
             table.insert( self.TeleportChargeBag, fx)
         end
@@ -222,27 +258,39 @@ do
         local army = self:GetArmy()
         local emit = nil
 		local bp = self:GetBlueprint()
+		local EffectSize = bp.Physics.MeshExtentsX
+		local YOffset = bp.Physics.MeshExtentsY / 2
 		local faction = bp.General.FactionName
 		
 		if faction == 'UEF' then
         for k, v in FBPOEffectTemplates.UEFHyperspaceOut01 do
-            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ -9)
+            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ -9)
+			emit:ScaleEmitter(EffectSize)
+			emit:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
         end
 		elseif faction == 'Cybran' then
         for k, v in FBPOEffectTemplates.CybranHyperspaceOut01 do
-            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ -9)
+            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ -9)
+			emit:ScaleEmitter(EffectSize)
+			emit:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
         end
 		elseif faction == 'Aeon' then
         for k, v in FBPOEffectTemplates.AeonHyperspaceOut01 do
-            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ -9)
+            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ -9)
+			emit:ScaleEmitter(EffectSize)
+			emit:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
         end
 		elseif faction == 'Seraphim' then
         for k, v in FBPOEffectTemplates.SeraphimHyperspaceOut01 do
-            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ -9)
+            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ -9)
+			emit:ScaleEmitter(EffectSize)
+			emit:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
         end
 		else
 		for k, v in EffectTemplate.GenericTeleportOut01 do
-            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ -9)
+            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ -9)
+			emit:ScaleEmitter(EffectSize)
+			emit:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
         end
 		end
     end,
@@ -251,32 +299,46 @@ do
     PlayHyperspaceInEffects = function(self)
         local army = self:GetArmy()
         local bp = self:GetBlueprint()
+		local EffectSize = bp.Physics.MeshExtentsX
+		local YOffset = bp.Physics.MeshExtentsY / 2
 		local faction = bp.General.FactionName
 		
 		if faction == 'UEF' then
         for k, v in FBPOEffectTemplates.UEFHyperspaceIn01 do
-            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ -9)
+            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ -9)
+			emit:ScaleEmitter(EffectSize)
+			emit:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
         end
 		elseif faction == 'Cybran' then
         for k, v in FBPOEffectTemplates.CybranHyperspaceIn01 do
-            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ -9)
+            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ -9)
+			emit:ScaleEmitter(EffectSize)
+			emit:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
         end
 		elseif faction == 'Aeon' then
         for k, v in FBPOEffectTemplates.AeonHyperspaceIn01 do
-            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ -9)
+            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ -9)
+			emit:ScaleEmitter(EffectSize)
+			emit:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
         end
 		elseif faction == 'Seraphim' then
         for k, v in FBPOEffectTemplates.SeraphimHyperspaceIn01 do
-            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ -9)
+            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ -9)
+			emit:ScaleEmitter(EffectSize)
+			emit:SetEmitterCurveParam('Y_POSITION_CURVE', 0, YOffset * 2) -- To make effects cover entire height of unit
         end
 		else
         for k, v in EffectTemplate.GenericTeleportIn01 do
-            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, -1.2, bp.Physics.MeshExtentsZ -9)
+            emit = CreateAttachedEmitter(self, 0, self.Army, v):OffsetEmitter(0, YOffset, bp.Physics.MeshExtentsZ -9)
+			emit:ScaleEmitter(EffectSize)
+
         end
 		end
     end,
+	
 	}
 	end
+	
 
 else
 
@@ -285,7 +347,32 @@ local UnitOld = Unit
 local FBPOEffectUtilities = import('/mods/Future Battlefield Pack Orbital/lua/FBPOEffectUtilities.lua')
 
 Unit = Class(UnitOld) {
+
     OnTeleportUnit = function(self, teleporter, location, orientation)
+	    local myposition = self:GetPosition()
+		local id = self:GetEntityId()
+		for num, brain in ArmyBrains do
+            local unitList = brain:GetListOfUnits(categories.ANTITELEPORT, false)
+            for i, unit in unitList do
+                -- If it's an ally, then we skip.
+                if IsEnemy(self:GetArmy(), unit:GetArmy()) then
+                    local blockerRange = unit.NoTeleDistance
+                    if blockerRange then
+                        local blockerPosition = unit:GetPosition()
+                        local targetDest = VDist2(location[1], location[3], blockerPosition[1], blockerPosition[3])
+                        local sourceCheck = VDist2(myposition[1], myposition[3], blockerPosition[1], blockerPosition[3])
+                        if blockerRange and blockerRange >= targetDest then
+                            FloatingEntityText(id, 'Warning: Gravitywell Generator Detected')
+                            return
+                        elseif blockerRange and blockerRange >= sourceCheck then
+                            FloatingEntityText(id, 'Warning: Gravitywell Generator Online')
+                            return
+                        end
+                    end
+                end
+            end
+        end
+	
 		if self.TeleportDrain then
             RemoveEconomyEvent(self, self.TeleportDrain)
             self.TeleportDrain = nil
@@ -301,7 +388,7 @@ Unit = Class(UnitOld) {
     end,
 
     OnFailedTeleport = function(self)
-		if EntityCategoryContains(categories.SPACESHIP, self) then
+		if EntityCategoryContains(categories.SPACESHIP, self) or EntityCategoryContains(categories.CAPITALSPACESHIP, self) then
 		if self.TeleportDrain then
             RemoveEconomyEvent(self, self.TeleportDrain)
             self.TeleportDrain = nil
@@ -340,7 +427,7 @@ Unit = Class(UnitOld) {
     end,
 
     InitiateTeleportThread = function(self, teleporter, location, orientation)
-		if EntityCategoryContains(categories.SPACESHIP, self) then
+		if EntityCategoryContains(categories.SPACESHIP, self) or EntityCategoryContains(categories.CAPITALSPACESHIP, self) then
 		self.UnitBeingTeleported = self
         self:SetImmobile(true)
         self:PlayUnitSound('TeleportStart')

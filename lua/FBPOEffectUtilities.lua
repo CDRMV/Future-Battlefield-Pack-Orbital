@@ -3,7 +3,6 @@ local Entity = import('/lua/sim/Entity.lua').Entity
 local FBPOEffectTemplate = import('/mods/Future Battlefield Pack Orbital/lua/FBPOEffectTemplates.lua')
 local util = import('/lua/utilities.lua')
 
-
 --------------------------------------------------------------------------------
 
 -- Spaceship FAF Hyperspace Wormhole Effects
@@ -23,6 +22,7 @@ function PlayHyperspaceChargingEffects(unit, TeleportDestination, EffectsBag, te
     local bp = unit:GetBlueprint()
     local faction = bp.General.FactionName
     local Yoffset = HyperspaceGetUnitYOffset(unit)
+	local EffectSize = HyperspaceGetUnitSizes(unit)
 
     TeleportDestination = HyperspaceLocationToSurface(TeleportDestination)
 
@@ -35,7 +35,7 @@ function PlayHyperspaceChargingEffects(unit, TeleportDestination, EffectsBag, te
             unit.TeleportChargeBag = {}
             local telefx = FBPOEffectTemplate.UEFHyperspaceCharge02
             for _, v in telefx do
-                local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, 6)
+                local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, bp.Physics.MeshExtentsZ + 6)
                 fx:ScaleEmitter(0.75)
                 fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, Yoffset * 2) -- To make effects cover entire height of unit
                 table.insert(unit.TeleportChargeBag, fx)
@@ -55,32 +55,32 @@ function PlayHyperspaceChargingEffects(unit, TeleportDestination, EffectsBag, te
 		elseif faction == 'Aeon' then
             -- We recycle the teleport destination effects since they are way more epic
             unit.TeleportChargeBag = {}
-            local telefx = FBPOEffectTemplate.AeonHyperspaceCharge02
-            for _, v in telefx do
-                local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, 6)
-                fx:ScaleEmitter(0.75)
-                fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, Yoffset * 2) -- To make effects cover entire height of unit
-                table.insert(unit.TeleportChargeBag, fx)
-                EffectsBag:Add(fx)
-            end
+			local telefx = FBPOEffectTemplate.AeonHyperspaceCharge02
+			for _, v in telefx do
+				local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, bp.Physics.MeshExtentsZ + 6)
+				fx:ScaleEmitter(EffectSize)
+				fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, Yoffset * 2) -- To make effects cover entire height of unit
+				table.insert(unit.TeleportChargeBag, fx)
+				EffectsBag:Add(fx)
+			end
 
-            -- Make steam FX
-            local totalBones = unit:GetBoneCount() - 1
-            for _, v in EffectTemplate.UnitTeleportSteam01 do
-                for bone = 1, totalBones do
-                    local emitter = CreateAttachedEmitter(unit, bone, unit.Army, v):SetEmitterParam('Lifetime', 9999) -- Adjust the lifetime so we always teleport before its done
+			-- Make steam FX
+			local totalBones = unit:GetBoneCount() - 1
+			for _, v in EffectTemplate.UnitTeleportSteam01 do
+				for bone = 1, totalBones do
+					local emitter = CreateAttachedEmitter(unit, bone, unit.Army, v):SetEmitterParam('Lifetime', 9999) -- Adjust the lifetime so we always teleport before its done
 
-                    table.insert(unit.TeleportChargeBag, emitter)
-                    EffectsBag:Add(emitter)
-                end
-            end
+					table.insert(unit.TeleportChargeBag, emitter)
+					EffectsBag:Add(emitter)
+				end
+			end
         -- Use a per-bone FX construction rather than wrap-around for the non-UEF factions
         elseif faction == 'Cybran' then
             -- We recycle the teleport destination effects since they are way more epic
             unit.TeleportChargeBag = {}
             local telefx = FBPOEffectTemplate.CybranHyperspaceCharge02
             for _, v in telefx do
-                local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, 6)
+                local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, bp.Physics.MeshExtentsZ + 6)
                 fx:ScaleEmitter(0.75)
                 fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, Yoffset * 2) -- To make effects cover entire height of unit
                 table.insert(unit.TeleportChargeBag, fx)
@@ -102,7 +102,7 @@ function PlayHyperspaceChargingEffects(unit, TeleportDestination, EffectsBag, te
             unit.TeleportChargeBag = {}
             local telefx = FBPOEffectTemplate.SeraphimHyperspaceCharge02
             for _, v in telefx do
-                local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, 6)
+                local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, bp.Physics.MeshExtentsZ + 6)
                 fx:ScaleEmitter(0.75)
                 fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, Yoffset * 2) -- To make effects cover entire height of unit
                 table.insert(unit.TeleportChargeBag, fx)
@@ -168,7 +168,7 @@ function PlayHyperspaceChargingEffects(unit, TeleportDestination, EffectsBag, te
             local telefx = FBPOEffectTemplate.AeonHyperspaceCharge02
             for _, v in telefx do
                 local fx = CreateEmitterAtEntity(TeleportDestFxEntity, unit.Army, v):OffsetEmitter(0, bp.Physics.Elevation, 0)
-                fx:ScaleEmitter(0.75)
+                fx:ScaleEmitter(EffectSize)
                 fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, Yoffset * 2) -- To make effects cover entire height of unit
                 table.insert(unit.TeleportDestChargeBag, fx)
                 EffectsBag:Add(fx)
@@ -280,6 +280,7 @@ end
 
 function HyperspaceChargingProgress(unit, fraction)
     local bp = unit:GetBlueprint()
+	local EffectSize = HyperspaceGetUnitSizes(unit)
 
     if bp.Display.HyperspaceEffects.PlayChargeFxAtDestination ~= false then
         fraction = math.min(math.max(fraction, 0.01), 1)
@@ -288,7 +289,7 @@ function HyperspaceChargingProgress(unit, fraction)
         if faction == 'UEF' then
             -- Increase rotation of effects as progressing
             if unit.TeleportDestChargeBag then
-                local scale = 0.75 + (0.5 * math.max(fraction, 0.01))
+                local scale = EffectSize + (0.5 * math.max(fraction, 0.01))
                 for _, fx in unit.TeleportDestChargeBag do
                     fx:ScaleEmitter(scale)
                 end
@@ -301,7 +302,7 @@ function HyperspaceChargingProgress(unit, fraction)
 		elseif faction == 'Aeon' then
             -- Increase rotation of effects as progressing
             if unit.TeleportDestChargeBag then
-                local scale = 0.75 + (0.5 * math.max(fraction, 0.01))
+                local scale = EffectSize + (0.5 * math.max(fraction, 0.01))
                 for _, fx in unit.TeleportDestChargeBag do
                     fx:ScaleEmitter(scale)
                 end
@@ -441,6 +442,7 @@ function PlayHyperspaceInEffects(unit, EffectsBag)
     local bp = unit:GetBlueprint()
     local faction = bp.General.FactionName
     local Yoffset = HyperspaceGetUnitYOffset(unit)
+	local EffectSize = HyperspaceGetUnitSizes(unit)
 
     if bp.Display.HyperspaceEffects.PlayTeleportInFx ~= false then
         unit:PlayUnitSound('TeleportIn')
@@ -448,7 +450,7 @@ function PlayHyperspaceInEffects(unit, EffectsBag)
             local templ = FBPOEffectTemplate.UEFHyperspaceIn01
             for _, v in templ do
                 local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, -6)
-                fx:ScaleEmitter(0.75)
+                fx:ScaleEmitter(EffectSize)
                 fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, Yoffset * 2) -- To make effects cover entire height of unit
                 table.insert(unit.TeleportChargeBag, fx)
                 EffectsBag:Add(fx)
@@ -472,7 +474,7 @@ function PlayHyperspaceInEffects(unit, EffectsBag)
             local templ = FBPOEffectTemplate.AeonHyperspaceIn01
             for _, v in templ do
                 local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, -6)
-                fx:ScaleEmitter(0.75)
+                fx:ScaleEmitter(EffectSize)
                 fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, Yoffset * 2) -- To make effects cover entire height of unit
                 table.insert(unit.TeleportChargeBag, fx)
                 EffectsBag:Add(fx)
@@ -503,7 +505,7 @@ function PlayHyperspaceInEffects(unit, EffectsBag)
             local scale = unit.HyperspaceCybranSphereScale or 5
             for _, v in templ do
                 local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, -6)
-                fx:ScaleEmitter(0.75)
+                fx:ScaleEmitter(EffectSize)
                 fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, Yoffset * 2) -- To make effects cover entire height of unit
                 table.insert(unit.TeleportChargeBag, fx)
                 EffectsBag:Add(fx)
@@ -539,7 +541,7 @@ function PlayHyperspaceInEffects(unit, EffectsBag)
                 local templ = FBPOEffectTemplate.SeraphimHyperspaceIn01
                 for _, v in templ do
                 local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, -6)
-                fx:ScaleEmitter(0.75)
+                fx:ScaleEmitter(EffectSize)
                 fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, Yoffset * 2) -- To make effects cover entire height of unit
                 table.insert(unit.TeleportChargeBag, fx)
                 EffectsBag:Add(fx)
@@ -563,7 +565,7 @@ function PlayHyperspaceInEffects(unit, EffectsBag)
             local templ = FBPOEffectTemplate.GenericHyperspaceIn01
             for _, v in templ do
                 local fx = CreateAttachedEmitter(unit, 0, unit.Army, v):OffsetEmitter(0, Yoffset, -6)
-                fx:ScaleEmitter(0.75)
+                fx:ScaleEmitter(EffectSize)
                 fx:SetEmitterCurveParam('Y_POSITION_CURVE', 0, Yoffset * 2) -- To make effects cover entire height of unit
                 table.insert(unit.TeleportChargeBag, fx)
                 EffectsBag:Add(fx)

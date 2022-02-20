@@ -9,6 +9,7 @@
 #****************************************************************************
 
 local AAirUnit = import('/lua/aeonunits.lua').AAirUnit
+local ADFLaserLightWeapon = import('/lua/aeonweapons.lua').ADFLaserLightWeapon
 
 UAFSF100 = Class(AAirUnit) {
     PlayDestructionEffects = true,
@@ -18,7 +19,10 @@ UAFSF100 = Class(AAirUnit) {
     BeamExhaustCruise = '/mods/Future Battlefield Pack Orbital/effects/emitters/aeon_fighter_move_trail_beam_01_emit.bp',
     BeamExhaustIdle = '/mods/Future Battlefield Pack Orbital/effects/emitters/aeon_fighter_move_trail_beam_01_emit.bp',
     BeamExhaustSize = 0.001,
-
+    Weapons = {
+        ASFLaser = Class(ADFLaserLightWeapon) {
+        },
+    },
 }
 
 TypeClass = UAFSF100

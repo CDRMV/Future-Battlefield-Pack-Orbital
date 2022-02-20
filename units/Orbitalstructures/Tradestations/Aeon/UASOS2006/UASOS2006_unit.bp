@@ -65,8 +65,6 @@ UnitBlueprint {
         'SELECTABLE',
         'AIR',
         'AEON',
-		'BUILTBYTIER2ORBITALENGINEER',
-		'BUILTBYTIER3ORBITALENGINEER',
         'ORBITAL',
         'MOBILE',
 		'TRADESTATION',

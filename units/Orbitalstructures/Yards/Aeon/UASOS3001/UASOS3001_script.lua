@@ -8,17 +8,13 @@
 #****************************************************************************
 
 local AAirFactoryUnit = import('/lua/aeonunits.lua').AAirFactoryUnit 
+local FBPOWeaponFile = import('/mods/Future Battlefield Pack Orbital/lua/FBPOweapons.lua')
+local ADFOrbitalLaser = FBPOWeaponFile.ADFOrbitalLaser
 
 UASOS3001 = Class(AAirFactoryUnit) {
-    OnStopBeingBuilt = function(self)
-        AAirFactoryUnit.OnStopBeingBuilt(self)
-        self.Spinners = {
-            Spinner1 = CreateRotator(self, 'Body', 'y', nil, 0, 60, 360):SetTargetSpeed(2),
-        }
-        for k, v in self.Spinners do
-            self.Trash:Add(v)
-        end
-    end,
+	Weapons = {
+		AOMainGun = Class(ADFOrbitalLaser) {},
+    },
 
 }
 

@@ -9,20 +9,21 @@
 
 local AAirUnit = import('/lua/aeonunits.lua').AAirUnit
 local FBPOWeaponFile = import('/mods/Future Battlefield Pack Orbital/lua/FBPOweapons.lua')
-local TDFOrbitalLaserWeapon = FBPOWeaponFile.TDFOrbitalLaserWeapon
-local TDFOrbitalLightLaserWeapon = FBPOWeaponFile.TDFOrbitalLightLaserWeapon
-local TDFOrbitalLightAntifighterLaserWeapon = FBPOWeaponFile.TDFOrbitalLightAntifighterLaserWeapon
+local ADFOrbitalLaser = FBPOWeaponFile.ADFOrbitalLaser
+local ADFHOrbitalLaser = FBPOWeaponFile.ADFHOrbitalLaser
+local ADFLaserLightWeapon = import('/lua/aeonweapons.lua').ADFLaserLightWeapon
 
 UASP0202 = Class(AAirUnit) {
 
-    BeamExhaustCruise = '/mods/Future Battlefield Pack Orbital/effects/emitters/Aeon_Spaceship_Engine_beam_emit.bp',
-    BeamExhaustIdle = '/mods/Future Battlefield Pack Orbital/effects/emitters/Aeon_Spaceship_Engine_trail_emit.bp',
-
-    Weapons = {
-        MainGun = Class(TDFOrbitalLaserWeapon) {},
-        MainGun2 = Class(TDFOrbitalLightLaserWeapon) {},
-        MainGun3 = Class(TDFOrbitalLightLaserWeapon) {},
-        MainGun4 = Class(TDFOrbitalLightAntifighterLaserWeapon) {},
+	Weapons = {
+		AOHMainGun = Class(ADFHOrbitalLaser) {},
+        OHMainGun = Class(ADFHOrbitalLaser) {},
+        PBHMainGun = Class(ADFHOrbitalLaser) {},
+		AOLMainGun = Class(ADFOrbitalLaser) {},
+        OLMainGun = Class(ADFOrbitalLaser) {},
+        PBLMainGun = Class(ADFOrbitalLaser) {},
+		ASFMissiles = Class(ADFOrbitalLaser) {},
+		ASFEnergyDrone = Class(ADFLaserLightWeapon) {},
     },
 	
 	BuildAttachBone = 'UASP0202',

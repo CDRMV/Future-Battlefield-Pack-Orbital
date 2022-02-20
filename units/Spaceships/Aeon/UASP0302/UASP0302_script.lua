@@ -9,21 +9,36 @@
 
 local AAirUnit = import('/lua/aeonunits.lua').AAirUnit
 local FBPOWeaponFile = import('/mods/Future Battlefield Pack Orbital/lua/FBPOweapons.lua')
-local TDFOrbitalLaserWeapon = FBPOWeaponFile.TDFOrbitalLaserWeapon
-local TDFOrbitalLightLaserWeapon = FBPOWeaponFile.TDFOrbitalLightLaserWeapon
-local TDFOrbitalLightAntifighterLaserWeapon = FBPOWeaponFile.TDFOrbitalLightAntifighterLaserWeapon
+local ADFHOrbitalLaser = FBPOWeaponFile.ADFHOrbitalLaser
+local ADFOrbWeapon = FBPOWeaponFile.ADFOrbWeapon
+local AAAZealotMissileWeapon = import('/lua/aeonweapons.lua').AAAZealotMissileWeapon
 
 UASP0302 = Class(AAirUnit) {
 
-    BeamExhaustCruise = '/mods/Future Battlefield Pack Orbital/effects/emitters/Aeon_CapitalSpaceship_Engine_trail_emit.bp',
-    BeamExhaustIdle = '/mods/Future Battlefield Pack Orbital/effects/emitters/Aeon_CapitalSpaceship_Engine_trail_emit.bp',
-	BeamExhaustSize = 1,
-
-    Weapons = {
-        MainGun = Class(TDFOrbitalLaserWeapon) {},
-        MainGun2 = Class(TDFOrbitalLightLaserWeapon) {},
-        MainGun3 = Class(TDFOrbitalLightLaserWeapon) {},
-        MainGun4 = Class(TDFOrbitalLightAntifighterLaserWeapon) {},
+	Weapons = {
+		AOHMainGun = Class(ADFHOrbitalLaser) {},
+        OHMainGun = Class(ADFHOrbitalLaser) {},
+        PBHMainGun = Class(ADFHOrbitalLaser) {},
+		AOOrbGun = Class(ADFOrbWeapon) {},
+        ROOrbGun1 = Class(ADFOrbWeapon) {},
+        RPBOrbGun1 = Class(ADFOrbWeapon) {},
+		ROOrbGun2 = Class(ADFOrbWeapon) {},
+        RPBOrbGun2 = Class(ADFOrbWeapon) {},
+		ROOrbGun3 = Class(ADFOrbWeapon) {},
+        RPBOrbGun3 = Class(ADFOrbWeapon) {},
+		OOrbGun = Class(ADFOrbWeapon) {},
+        PBOrbGun = Class(ADFOrbWeapon) {},
+		OOrbGun1 = Class(ADFOrbWeapon) {},
+        PBOrbGun1 = Class(ADFOrbWeapon) {},
+		OOrbGun2 = Class(ADFOrbWeapon) {},
+        PBOrbGun2 = Class(ADFOrbWeapon) {},
+		LOOrbGun1 = Class(ADFOrbWeapon) {},
+        LPBOrbGun1 = Class(ADFOrbWeapon) {},
+		LOOrbGun2 = Class(ADFOrbWeapon) {},
+        LPBOrbGun2 = Class(ADFOrbWeapon) {},
+		LOOrbGun3 = Class(ADFOrbWeapon) {},
+        LPBOrbGun3 = Class(ADFOrbWeapon) {},
+		ASFMissiles = Class(AAAZealotMissileWeapon) {},
     },
 
     BuildAttachBone = 'UASP0302',

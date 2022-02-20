@@ -1,0 +1,15 @@
+MeshBlueprint {
+    IconFadeInZoom = 230,
+    LODs = {
+        {
+            MeshName = 'UASP0204_lod0.scm',
+            AlbedoName = 'UASP0204_Albedo.dds',
+            NormalsName = 'UASP0204_normalsTS.dds',
+            SpecularName = 'UASP0204_specteam.dds',
+            LookupName = '/mods/Future Battlefield Pack Orbital/effects/entities/ASpaceshipShield/ASpaceshipShield.dds',
+            ShaderName = 'PhaseShield',
+            LODCutoff = 900,
+            Scrolling = true,
+        },
+    },
+}

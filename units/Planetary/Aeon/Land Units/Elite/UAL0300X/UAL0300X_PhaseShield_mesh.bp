@@ -1,0 +1,14 @@
+MeshBlueprint {
+    IconFadeInZoom = 130,
+    LODs = {
+        {
+            MeshName = '/mods/Future Battlefield Pack Orbital/units/Planetary/Aeon/Land Units/Elite/UAL0300X/UAL0300X_lod0.scm',
+            AlbedoName = '/mods/Future Battlefield Pack Orbital/units/Planetary/Aeon/Land Units/Elite/UAL0300X/UAL0300X_albedo.dds',
+            NormalsName = '/mods/Future Battlefield Pack Orbital/units/Planetary/Aeon/Land Units/Elite/UAL0300X/UAL0300X_normals.dds',
+            SpecularName = '/mods/Future Battlefield Pack Orbital/units/Planetary/Aeon/Land Units/Elite/UAL0300X/UAL0300X_specteam.dds',
+            LookupName = '/effects/entities/PhaseShield/PhaseShieldLookup.dds',
+            ShaderName = 'PhaseShield',
+            LODCutoff = 195,
+        },
+    },
+}

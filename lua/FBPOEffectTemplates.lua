@@ -6,6 +6,90 @@ AeonLaserFenceBeam = {
     ModBpPath .. 'aeon_laserfence_beam_01_emit.bp',
 }
 
+AeonHAntiSpaceshipShieldDisruptor = {
+    ModBpPath .. 'Anti_Orbital_SD01_emit.bp',
+    ModBpPath .. 'Anti_Orbital_SD02_emit.bp',
+    ModBpPath .. 'Anti_Orbital_SD03_emit.bp',
+    ModBpPath .. 'Anti_Orbital_SD04_emit.bp',
+	ModBpPath .. 'Aeon_ShieldDisruptorAddon1_emit.bp',
+	ModBpPath .. 'Aeon_ShieldDisruptorAddon2_emit.bp',
+	ModBpPath .. 'Aeon_ShieldDisruptorAddon3_emit.bp',
+	ModBpPath .. 'Aeon_ShieldDisruptorAddon4_emit.bp',
+}
+
+AeonMAntiSpaceshipShieldDisruptor = {
+    ModBpPath .. 'Anti_Orbital_SD01_emit.bp',
+    ModBpPath .. 'Anti_Orbital_SD02_emit.bp',
+    ModBpPath .. 'Anti_Orbital_SD03_emit.bp',
+    ModBpPath .. 'Anti_Orbital_SD04_emit.bp',
+	ModBpPath .. 'Aeon_ShieldDisruptorAddon1_emit.bp',
+	ModBpPath .. 'Aeon_ShieldDisruptorAddon2_emit.bp',
+	ModBpPath .. 'Aeon_ShieldDisruptorAddon3_emit.bp',
+	ModBpPath .. 'Aeon_ShieldDisruptorAddon4_emit.bp',
+}
+
+AeonHAntiSpaceshipWeapon = {
+    ModBpPath .. 'Anti_Orbital_01_emit.bp',
+    ModBpPath .. 'Anti_Orbital_02_emit.bp',
+    ModBpPath .. 'Anti_Orbital_03_emit.bp',
+    ModBpPath .. 'Anti_Orbital_04_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect01_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect02_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect03_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect04_emit.bp',
+}
+
+AeonMAntiSpaceshipWeapon = {
+    ModBpPath .. 'Anti_Orbital_01_emit.bp',
+    ModBpPath .. 'Anti_Orbital_02_emit.bp',
+    ModBpPath .. 'Anti_Orbital_03_emit.bp',
+    ModBpPath .. 'Anti_Orbital_04_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect01_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect02_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect03_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect04_emit.bp',
+}
+
+AeonLAntiSpaceshipWeapon = {
+    ModBpPath .. 'Anti_Orbital_01_emit.bp',
+    ModBpPath .. 'Anti_Orbital_02_emit.bp',
+    ModBpPath .. 'Anti_Orbital_03_emit.bp',
+    ModBpPath .. 'Anti_Orbital_04_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect01_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect02_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect03_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect04_emit.bp',
+}
+
+AeonDeroyDropWeapon = {
+    ModBpPath .. 'Aeon_DeroyDrop_emit.bp',
+    ModBpPath .. 'Aeon_DeroyDrop_Effect01_emit.bp',
+    ModBpPath .. 'Aeon_DeroyDrop_Effect02_emit.bp',
+    ModBpPath .. 'Aeon_DeroyDrop_Effect03_emit.bp',
+    ModBpPath .. 'Aeon_DeroyDrop_Effect04_emit.bp',
+}
+
+AeonOrbSpaceshipWeapon = {
+    ModBpPath .. 'Aeon_OrbWeapon_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect01_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect02_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect03_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect04_emit.bp',
+}
+
+AeonLightSpaceshipWeapon = {
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect01_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect02_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect03_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect04_emit.bp',
+}
+
+AeonHeavySpaceshipWeapon = {
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect01_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect02_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect03_emit.bp',
+    ModBpPath .. 'Aeon_Spaceship_LWeapon_Effect04_emit.bp',
+}
 
 
 AeonHyperspaceCharge01 = {
