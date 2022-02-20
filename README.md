@@ -1,33 +1,24 @@
-# Future-Battlefield-Pack-Orbital
-Addon for the Future Battlefield Pack Mod, which adds a new Orbital Techtree and Units to the Game.
+--------------------------------------------------------------------------------------------------------------------
+## Github Wiki
 
-Important:
+(Currently in Development)
 
-If you want to build any Orbitalfactories or Yards make sure to build them not directly over Ground Structures.
+FBP Orbital has now get an public Github Wiki.   
+It includes several Documentations for these following Topics:
+- Unit Databases (for all Factions) 
+- Introduction for the new Techlevels
 
-Otherwise these Buildings will not able to build any Spaceunits.
+You can find the Wiki here:   
+https://github.com/CDRMV/Future-Battlefield-Pack-Orbital/wiki
 
-This is already a known Issue 
+--------------------------------------------------------------------------------------------------------------------
+## Early Access
+
+This Github Repository can be used to get an Early Access Version of this Mod.    
+You can find additional Informations and Install Instructions here:   
+https://github.com/CDRMV/Future-Battlefield-Pack-Orbital/wiki/Installation
 
 --------------------------------------------------------------------------------------------------------------------
 
-Please Remember that this is an Early Access of this Mod.
 
-So it is not the final Release.
-
-It is not allowed to Upload it somewhere without my permission.
-
-Only official Releases can be uploaded by someone in the future.
-
-But you will need my permission for that first of course.
-
---------------------------------------------------------------------------------------------------------------------
-
-Install Instructions:
-1) Download the Zip File 
-2) The Zip File and the Folder in it is called: Future-Battlefield-Pack-Orbital-master
-3) Extract or Copy the Folder Future-Battlefield-Pack-Orbital-master to your Mods Dictionary 
-4) Rename the Folder Future-Battlefield-Pack-Orbital-master to Future Battlefield Pack Orbital. 
-5) Activate the Mod in the Mod manager 
-6) Enjoy 
 
