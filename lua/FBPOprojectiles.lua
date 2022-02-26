@@ -132,6 +132,7 @@ APBACUDropProjectile = Class(EmitterProjectile) {
 APBGravitonProjectile = Class(EmitterProjectile) {
 
     FxTrails = ModEffectTemplate.AeonOrbSpaceshipWeapon,
+	FxImpactShield = EffectTemplate.AeonDeflectorShieldHit01,
     FxImpactUnit = EffectTemplate.FireCloudMed01,
     FxImpactProp = EffectTemplate.FireCloudMed01,
     FxImpactLand = EffectTemplate.FireCloudMed01,
@@ -152,6 +153,7 @@ ASFLaserProjectile = Class(EmitterProjectile) {
 	FxLandHitScale = 0.1,
 
     # Hit Effects
+	FxImpactShield = EffectTemplate.AeonDeflectorShieldHit01,
     FxImpactUnit = EffectTemplate.FireCloudMed01,
     FxImpactProp = EffectTemplate.FireCloudMed01,
     FxImpactLand = EffectTemplate.FireCloudMed01,
@@ -190,6 +192,7 @@ AOrbitalLaser01 = Class(MultiPolyTrailProjectile) {
 	PolyTrailOffset = {0,0},
 
     # Hit Effects
+	FxImpactShield = EffectTemplate.AeonDeflectorShieldHit01,
     FxImpactUnit = EffectTemplate.FireCloudMed01,
     FxImpactProp = EffectTemplate.FireCloudMed01,
     FxImpactLand = EffectTemplate.FireCloudMed01,
@@ -211,6 +214,7 @@ AHOrbitalLaser01 = Class(MultiPolyTrailProjectile) {
 	PolyTrailOffset = {0,0},
 
     # Hit Effects
+	FxImpactShield = EffectTemplate.AeonDeflectorShieldHit01,
     FxImpactUnit = EffectTemplate.FireCloudMed01,
     FxImpactProp = EffectTemplate.FireCloudMed01,
     FxImpactLand = EffectTemplate.FireCloudMed01,

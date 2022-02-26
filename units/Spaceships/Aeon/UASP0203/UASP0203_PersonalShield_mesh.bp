@@ -1,15 +1,16 @@
 MeshBlueprint {
-    IconFadeInZoom = 230,
+	    --IconFadeInZoom = 130,
     LODs = {
         {
-            MeshName = 'UASP0203_lod0.scm',
-            AlbedoName = 'UASP0203_Albedo.dds',
-            NormalsName = 'UASP0203_normalsTS.dds',
-            SpecularName = 'UASP0203_specteam.dds',
-            LookupName = '/mods/Future Battlefield Pack Orbital/effects/entities/ASpaceshipShield/ASpaceshipShield.dds',
-            ShaderName = 'PhaseShield',
-            LODCutoff = 900,
-            Scrolling = true,
+            MeshName = 'UASP0203_PersonalShield.scm',
+            AlbedoName = '/effects/Entities/AeonShield01/AeonShield01_Albedo.dds',
+            NormalsName = '/effects/Entities/AeonShield01/AeonShield01_Normals.dds',
+            SpecularName = '/effects/Entities/AeonShield01/AeonShield01_Specular.dds',
+            LookupName = '/effects/entities/PhaseShield/PhaseShieldLookup.dds',
+            ShaderName = 'ShieldAeon',
+            LODCutoff = 1000,
         },
     },
+    IconFadeInZoom = 4,
+    SortOrder = 1000,
 }

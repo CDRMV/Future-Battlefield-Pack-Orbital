@@ -1,0 +1,14 @@
+MeshBlueprint {
+    IconFadeInZoom = 4,
+    SortOrder = 1000,
+	    --IconFadeInZoom = 130,
+    LODs = {
+        {
+            MeshName = 'UASP0204_PersonalShield.scm',
+            ShaderName = 'ShieldFill',
+            LODCutoff = 1000,
+        },
+    },
+    IconFadeInZoom = 4,
+    SortOrder = 999,
+}
