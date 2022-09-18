@@ -749,7 +749,7 @@ UnitBlueprint {
         MeshExtentsX = 12,
         MeshExtentsY = 2,
         MeshExtentsZ = 12,
-        MaxSpeed = 0,
+        MaxSpeed = 1.5,
         MaxSteerForce = 5,
         MinSpeedPercent = 0,
 		StandUpright = true, 
