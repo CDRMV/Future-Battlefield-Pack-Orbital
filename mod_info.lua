@@ -6,6 +6,7 @@ description = "'Future Battlefield Pack: Orbital' is a new Unitpack for Forged A
 url = "http://www.moddb.com/mods/fbp-future-battlefield-pack"
 
 uid = "5t3edt-btz6-9437-h6ui-967gt56fa5"
+FBPProjectModName="FBP-Orbital"
 exclusive = false
 ui_only = false
 selectable = true
